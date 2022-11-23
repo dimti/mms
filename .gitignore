@@ -1,23 +1,20 @@
-/vendor/
-node_modules/
-npm-debug.log
-yarn-error.log
+# Composer ignores
+/vendor
 
-# Laravel 4 specific
-bootstrap/compiled.php
-app/storage/
-
-# Laravel 5 & Lumen specific
-public/storage
-public/hot
-
-# Laravel 5 & Lumen specific with changed public path
-public_html/storage
-public_html/hot
-
-storage/*.key
+# Framework ignores
 .env
-Homestead.yaml
-Homestead.json
-/.vagrant
-.phpunit.result.cache
+/bootstrap/compiled.php
+
+# Editor ignores
+.idea
+_ide_helper.php
+
+# WinterCMS
+/modules
+
+# Plugins
+/plugins/flynsarmy
+/plugins/winter
+
+# iseed ignore
+/database/seeders

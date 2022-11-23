@@ -1,0 +1,10 @@
+name: Containers
+form: $/wpstudio/mms/models/container/fields.yaml
+modelClass: Wpstudio\Mms\Models\Container
+defaultRedirect: wpstudio/mms/containers
+create:
+    redirect: 'wpstudio/mms/containers/update/:id'
+    redirectClose: wpstudio/mms/containers
+update:
+    redirect: wpstudio/mms/containers
+    redirectClose: wpstudio/mms/containers

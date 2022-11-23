@@ -1,0 +1,65 @@
+{
+    "name": "dimti/mms",
+    "description": "Management & Monitoring Servers",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alexander Demidov",
+            "email": "dimidov@dimti.ru"
+        }
+    ],
+    "require": {
+        "php": "^8.0.2",
+        "winter/storm": "dev-develop as 1.2",
+        "winter/wn-system-module": "dev-develop",
+        "winter/wn-backend-module": "dev-develop",
+        "winter/wn-cms-module": "dev-develop",
+        "laravel/framework": "^9.1",
+        "wikimedia/composer-merge-plugin": "~2.0.1",
+        "mrkampf/proxmox-ve": "^0.4.4",
+        "mw7147/remote": "^6.2",
+        "winter/wn-builder-plugin": "^2.0",
+        "flynsarmy/wn-idehelper-plugin": "dev-master",
+        "thegr8dev/iseed": "dev-master"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/mw7147/remote.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/Flynsarmy/wn-idehelper-plugin"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/dimti/iseed"
+        }
+    ],
+    "scripts": {
+        "post-update-cmd": [
+            "@php artisan winter:version",
+            "@php artisan package:discover",
+            "rm -rf modules/system/tests"
+        ]
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "merge-plugin": {
+            "include": [
+                "plugins/disabled/*/composer.json"
+            ],
+            "recurse": true,
+            "replace": false,
+            "merge-dev": false
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true,
+            "wikimedia/composer-merge-plugin": true
+        }
+    }
+}

@@ -1,0 +1,4 @@
+title: DestinationRoles
+modelClass: Wpstudio\Mms\Models\DestinationRole
+toolbar:
+    buttons: reorder_toolbar

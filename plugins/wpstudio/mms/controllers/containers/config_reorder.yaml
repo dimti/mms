@@ -1,0 +1,4 @@
+title: Containers
+modelClass: Wpstudio\Mms\Models\Container
+toolbar:
+    buttons: reorder_toolbar

@@ -1,0 +1,4 @@
+title: Servers
+modelClass: Wpstudio\Mms\Models\Server
+toolbar:
+    buttons: reorder_toolbar

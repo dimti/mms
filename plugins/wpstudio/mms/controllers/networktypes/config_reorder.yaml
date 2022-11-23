@@ -1,0 +1,4 @@
+title: NetworkTypes
+modelClass: Wpstudio\Mms\Models\NetworkType
+toolbar:
+    buttons: reorder_toolbar

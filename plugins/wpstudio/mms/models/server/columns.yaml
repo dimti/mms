@@ -1,0 +1,34 @@
+columns:
+    id:
+        label: id
+        type: number
+    name:
+        label: name
+        type: text
+    code:
+        label: code
+        type: text
+    type_id:
+        label: type_id
+        type: number
+    main_ip_address:
+        label: main_ip_address
+        type: text
+    additional_ip_addresses:
+        label: additional_ip_addresses
+        type: text
+    description:
+        label: description
+        type: text
+    created_at:
+        label: created_at
+        type: datetime
+    updated_at:
+        label: updated_at
+        type: datetime
+    deleted_at:
+        label: deleted_at
+        type: datetime
+    sort_order:
+        label: Order
+        type: number

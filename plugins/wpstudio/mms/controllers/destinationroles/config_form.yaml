@@ -1,0 +1,10 @@
+name: DestinationRoles
+form: $/wpstudio/mms/models/destinationrole/fields.yaml
+modelClass: Wpstudio\Mms\Models\DestinationRole
+defaultRedirect: wpstudio/mms/destinationroles
+create:
+    redirect: 'wpstudio/mms/destinationroles/update/:id'
+    redirectClose: wpstudio/mms/destinationroles
+update:
+    redirect: wpstudio/mms/destinationroles
+    redirectClose: wpstudio/mms/destinationroles

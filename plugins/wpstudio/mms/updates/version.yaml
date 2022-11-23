@@ -1,0 +1,23 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table wpstudio_mms_servers'
+    - builder_table_create_wpstudio_mms_servers.php
+1.0.3:
+    - 'Created table wpstudio_mms_server_types'
+    - builder_table_create_wpstudio_mms_server_types.php
+1.0.4:
+    - 'Created table wpstudio_mms_containers'
+    - builder_table_create_wpstudio_mms_containers.php
+1.0.5:
+    - 'Created table wpstudio_mms_destination_roles'
+    - builder_table_create_wpstudio_mms_destination_roles.php
+1.0.6:
+    - 'Created table wpstudio_mms_network_types'
+    - builder_table_create_wpstudio_mms_network_types.php
+1.0.7:
+    - '+ foreigns'
+    - migration107.php
+1.0.8:
+    - '+ dictionaries seed'
+    - seeder108.php

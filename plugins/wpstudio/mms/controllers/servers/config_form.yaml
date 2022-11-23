@@ -1,0 +1,10 @@
+name: Servers
+form: $/wpstudio/mms/models/server/fields.yaml
+modelClass: Wpstudio\Mms\Models\Server
+defaultRedirect: wpstudio/mms/servers
+create:
+    redirect: 'wpstudio/mms/servers/update/:id'
+    redirectClose: wpstudio/mms/servers
+update:
+    redirect: wpstudio/mms/servers
+    redirectClose: wpstudio/mms/servers

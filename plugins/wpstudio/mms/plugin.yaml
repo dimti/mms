@@ -1,0 +1,37 @@
+plugin:
+    name: 'wpstudio.mms::lang.plugin.name'
+    description: 'wpstudio.mms::lang.plugin.description'
+    author: wpstudio
+    icon: wn-icon-server
+    replaces: {  }
+navigation:
+    main-menu-item:
+        label: 'wpstudio.mms::lang.plugin.name'
+        url: wpstudio/mms/servers
+        icon: icon-server
+        sideMenu:
+            servers:
+                label: Servers
+                url: wpstudio/mms/servers
+                icon: icon-server
+            containers:
+                label: Containers
+                url: wpstudio/mms/containers
+                icon: icon-linux
+    mms-dictionaries:
+        label: Dictionaries
+        url: wpstudio/mms/servertypes
+        icon: icon-navicon
+        sideMenu:
+            mms-dictionaries-server-types:
+                label: 'Server Types'
+                url: wpstudio/mms/servertypes
+                icon: icon-navicon
+            mms-dictionaries-destination-roles:
+                label: 'Destination Roles'
+                url: wpstudio/mms/destinationroles
+                icon: icon-navicon
+            mms-dictionaries-network-types:
+                label: 'Network Types'
+                url: wpstudio/mms/networktypes
+                icon: icon-navicon

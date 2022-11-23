@@ -1,0 +1,12 @@
+list: $/wpstudio/mms/models/servertype/columns.yaml
+modelClass: Wpstudio\Mms\Models\ServerType
+title: ServerTypes
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'wpstudio/mms/servertypes/update/:id'

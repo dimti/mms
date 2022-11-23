@@ -1,0 +1,10 @@
+name: NetworkTypes
+form: $/wpstudio/mms/models/networktype/fields.yaml
+modelClass: Wpstudio\Mms\Models\NetworkType
+defaultRedirect: wpstudio/mms/networktypes
+create:
+    redirect: 'wpstudio/mms/networktypes/update/:id'
+    redirectClose: wpstudio/mms/networktypes
+update:
+    redirect: wpstudio/mms/networktypes
+    redirectClose: wpstudio/mms/networktypes

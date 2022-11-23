@@ -1,0 +1,21 @@
+fields:
+    name:
+        label: Name
+        span: auto
+        type: text
+    code:
+        label: Code
+        span: auto
+        type: number
+    description:
+        label: Description
+        span: auto
+        type: textarea
+    destination_role_id:
+        label: 'Destination role id'
+        span: auto
+        type: relation
+    network_type_id:
+        label: 'Network type id'
+        span: auto
+        type: relation
