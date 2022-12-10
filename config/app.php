@@ -267,6 +267,9 @@ return [
 
         System\ServiceProvider::class,
         \Orangehill\Iseed\IseedServiceProvider::class,
+        \Collective\Remote\RemoteServiceProvider::class,
+        \RichardStyles\EloquentEncryption\EloquentEncryptionServiceProvider::class,
+        \Joshuapack\Cloudflare\CloudflareServiceProvider::class,
     ]),
 
     /*

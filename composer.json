@@ -10,18 +10,21 @@
         }
     ],
     "require": {
-        "php": "^8.0.2",
+        "php": "^8.1",
         "winter/storm": "dev-develop as 1.2",
         "winter/wn-system-module": "dev-develop",
         "winter/wn-backend-module": "dev-develop",
         "winter/wn-cms-module": "dev-develop",
         "laravel/framework": "^9.1",
         "wikimedia/composer-merge-plugin": "~2.0.1",
-        "mrkampf/proxmox-ve": "^0.4.4",
+        "mrkampf/proxmox-ve": "dev-master",
         "mw7147/remote": "^6.2",
-        "winter/wn-builder-plugin": "^2.0",
+        "winter/wn-builder-plugin": "dev-dimti",
         "flynsarmy/wn-idehelper-plugin": "dev-master",
-        "thegr8dev/iseed": "dev-master"
+        "thegr8dev/iseed": "dev-master",
+        "richardstyles/eloquentencryption": "^3.2",
+        "jacob/logbook-plugin": "dev-master",
+        "joshuapack/laravel-cloudflare": "^0.2.0"
     },
     "repositories": [
         {
@@ -35,6 +38,18 @@
         {
             "type": "vcs",
             "url": "https://github.com/dimti/iseed"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/dimti/wn-builder-plugin"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/dimti/oc-logbook"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/dimti/proxmoxVE"
         }
     ],
     "scripts": {

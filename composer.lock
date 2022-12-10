@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a3d2b993913afe6b357c294dd7cb19be",
+    "content-hash": "0c5aacf8548213c0ad1bc7b3a91a6f3f",
     "packages": [
         {
             "name": "assetic/framework",
@@ -296,6 +296,54 @@
                 }
             ],
             "time": "2022-08-10T22:54:19+00:00"
+        },
+        {
+            "name": "cloudflare/sdk",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cloudflare/cloudflare-php.git",
+                "reference": "fdfc656aa8b78016f4722acec30b54136c027d8e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cloudflare/cloudflare-php/zipball/fdfc656aa8b78016f4722acec30b54136c027d8e",
+                "reference": "fdfc656aa8b78016f4722acec30b54136c027d8e",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "guzzlehttp/guzzle": "^7.0.1",
+                "php": ">=7.2.5",
+                "psr/http-message": "~1.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.6",
+                "phpmd/phpmd": "@stable",
+                "phpunit/phpunit": "^5.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Cloudflare\\API\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Junade Ali",
+                    "email": "junade@cloudflare.com"
+                }
+            ],
+            "description": "PHP binding for v4 of the Cloudflare Client API.",
+            "support": {
+                "issues": "https://github.com/cloudflare/cloudflare-php/issues",
+                "source": "https://github.com/cloudflare/cloudflare-php/tree/1.3.0"
+            },
+            "time": "2021-10-13T03:40:33+00:00"
         },
         {
             "name": "composer/installers",
@@ -1353,107 +1401,6 @@
             "time": "2022-02-21T09:13:59+00:00"
         },
         {
-            "name": "erusev/parsedown",
-            "version": "1.7.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/erusev/parsedown.git",
-                "reference": "cb17b6477dfff935958ba01325f2e8a2bfa6dab3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/erusev/parsedown/zipball/cb17b6477dfff935958ba01325f2e8a2bfa6dab3",
-                "reference": "cb17b6477dfff935958ba01325f2e8a2bfa6dab3",
-                "shasum": ""
-            },
-            "require": {
-                "ext-mbstring": "*",
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.8.35"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Parsedown": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Emanuil Rusev",
-                    "email": "hello@erusev.com",
-                    "homepage": "http://erusev.com"
-                }
-            ],
-            "description": "Parser for Markdown.",
-            "homepage": "http://parsedown.org",
-            "keywords": [
-                "markdown",
-                "parser"
-            ],
-            "support": {
-                "issues": "https://github.com/erusev/parsedown/issues",
-                "source": "https://github.com/erusev/parsedown/tree/1.7.x"
-            },
-            "time": "2019-12-30T22:54:17+00:00"
-        },
-        {
-            "name": "erusev/parsedown-extra",
-            "version": "0.8.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/erusev/parsedown-extra.git",
-                "reference": "91ac3ff98f0cea243bdccc688df43810f044dcef"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/erusev/parsedown-extra/zipball/91ac3ff98f0cea243bdccc688df43810f044dcef",
-                "reference": "91ac3ff98f0cea243bdccc688df43810f044dcef",
-                "shasum": ""
-            },
-            "require": {
-                "erusev/parsedown": "^1.7.4"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.8.35"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "ParsedownExtra": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Emanuil Rusev",
-                    "email": "hello@erusev.com",
-                    "homepage": "http://erusev.com"
-                }
-            ],
-            "description": "An extension of Parsedown that adds support for Markdown Extra.",
-            "homepage": "https://github.com/erusev/parsedown-extra",
-            "keywords": [
-                "markdown",
-                "markdown extra",
-                "parsedown",
-                "parser"
-            ],
-            "support": {
-                "issues": "https://github.com/erusev/parsedown-extra/issues",
-                "source": "https://github.com/erusev/parsedown-extra/tree/0.8.x"
-            },
-            "time": "2019-12-30T23:20:37+00:00"
-        },
-        {
             "name": "flynsarmy/wn-idehelper-plugin",
             "version": "dev-master",
             "source": {
@@ -1963,6 +1910,91 @@
                 }
             ],
             "time": "2022-10-26T14:07:24+00:00"
+        },
+        {
+            "name": "jacob/logbook-plugin",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dimti/oc-logbook.git",
+                "reference": "fe57c59ecf247b2b9331651931cfe2e46bd5e953"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dimti/oc-logbook/zipball/fe57c59ecf247b2b9331651931cfe2e46bd5e953",
+                "reference": "fe57c59ecf247b2b9331651931cfe2e46bd5e953",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "default-branch": true,
+            "type": "october-plugin",
+            "description": "This plugin creates an audit log for changes in an Eloquent model.",
+            "support": {
+                "source": "https://github.com/dimti/oc-logbook/tree/master"
+            },
+            "time": "2022-11-28T15:11:29+00:00"
+        },
+        {
+            "name": "joshuapack/laravel-cloudflare",
+            "version": "v0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/joshuapack/laravel-cloudflare.git",
+                "reference": "1708973d37b58c005720a0a9a46b5d93881da6fa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/joshuapack/laravel-cloudflare/zipball/1708973d37b58c005720a0a9a46b5d93881da6fa",
+                "reference": "1708973d37b58c005720a0a9a46b5d93881da6fa",
+                "shasum": ""
+            },
+            "require": {
+                "cloudflare/sdk": "^1.1",
+                "illuminate/contracts": "^9",
+                "php": ">=8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "Cloudflare": "Joshuapack\\Cloudflare\\CloudflareFacade"
+                    },
+                    "providers": [
+                        "Joshuapack\\Cloudflare\\CloudflareServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Joshuapack\\Cloudflare\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Joshua Pack",
+                    "email": "joshua@joshuapack.com",
+                    "homepage": "https://joshuapack.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Use the Cloudflare API for Laravel 9 and PHP 8.",
+            "homepage": "https://github.com/joshuapack/laravel-cloudflare",
+            "keywords": [
+                "api",
+                "cloudflare",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/joshuapack/laravel-cloudflare/issues",
+                "source": "https://github.com/joshuapack/laravel-cloudflare/tree/v0.2.0"
+            },
+            "time": "2022-11-10T08:52:29+00:00"
         },
         {
             "name": "laravel/framework",
@@ -2552,16 +2584,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "3.10.3",
+            "version": "3.10.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "8013fb046c6a244b2b1b75cc95d732ed6bcdeb8a"
+                "reference": "a7790f3dd1b27af81d380e6b2afa77c16ab7e181"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/8013fb046c6a244b2b1b75cc95d732ed6bcdeb8a",
-                "reference": "8013fb046c6a244b2b1b75cc95d732ed6bcdeb8a",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/a7790f3dd1b27af81d380e6b2afa77c16ab7e181",
+                "reference": "a7790f3dd1b27af81d380e6b2afa77c16ab7e181",
                 "shasum": ""
             },
             "require": {
@@ -2623,7 +2655,7 @@
             ],
             "support": {
                 "issues": "https://github.com/thephpleague/flysystem/issues",
-                "source": "https://github.com/thephpleague/flysystem/tree/3.10.3"
+                "source": "https://github.com/thephpleague/flysystem/tree/3.10.4"
             },
             "funding": [
                 {
@@ -2639,7 +2671,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-11-14T10:42:43+00:00"
+            "time": "2022-11-26T19:48:01+00:00"
         },
         {
             "name": "league/mime-type-detection",
@@ -2801,16 +2833,16 @@
         },
         {
             "name": "mrkampf/proxmox-ve",
-            "version": "0.4.4",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/MrKampf/proxmoxVE.git",
-                "reference": "23b7fa2e94fc0d70bae55bd1891821bc4f1d3784"
+                "url": "https://github.com/dimti/proxmoxVE.git",
+                "reference": "e499d62a36d75fea4327b16a4175dada186008c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MrKampf/proxmoxVE/zipball/23b7fa2e94fc0d70bae55bd1891821bc4f1d3784",
-                "reference": "23b7fa2e94fc0d70bae55bd1891821bc4f1d3784",
+                "url": "https://api.github.com/repos/dimti/proxmoxVE/zipball/e499d62a36d75fea4327b16a4175dada186008c0",
+                "reference": "e499d62a36d75fea4327b16a4175dada186008c0",
                 "shasum": ""
             },
             "require": {
@@ -2819,13 +2851,18 @@
                 "lib-curl": "*",
                 "php": "^8.0|7.4|^8.1"
             },
+            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-0": {
                     "Proxmox": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "autoload-dev": {
+                "psr-0": {
+                    "Proxmox": "src/"
+                }
+            },
             "license": [
                 "GPL-3.0-or-later"
             ],
@@ -2845,14 +2882,14 @@
             ],
             "description": "Proxmox VE API Client",
             "keywords": [
+                "API",
                 "KVM",
                 "OpenVZ",
+                "PHP",
+                "PHP 7",
+                "PHP 8",
                 "Proxmox",
-                "Virtualization",
-                "api",
-                "php",
-                "php 7",
-                "php 8"
+                "Virtualization"
             ],
             "support": {
                 "issues": "https://github.com/MrKampf/proxmoxVE/issues",
@@ -4332,6 +4369,69 @@
                 }
             ],
             "time": "2022-11-05T23:03:38+00:00"
+        },
+        {
+            "name": "richardstyles/eloquentencryption",
+            "version": "v3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/RichardStyles/EloquentEncryption.git",
+                "reference": "349b24de5f8c10de959b50efe874f2a5583c4c8d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/RichardStyles/EloquentEncryption/zipball/349b24de5f8c10de959b50efe874f2a5583c4c8d",
+                "reference": "349b24de5f8c10de959b50efe874f2a5583c4c8d",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "^8.40||^9",
+                "illuminate/support": "^8.12||^9",
+                "php": "^7.3|^8.0|^8.1",
+                "phpseclib/phpseclib": "~2.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.4",
+                "phpunit/phpunit": "^8.5.19|^9.5.8"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "RichardStyles\\EloquentEncryption\\EloquentEncryptionServiceProvider"
+                    ],
+                    "aliases": {
+                        "EloquentEncryption": "RichardStyles\\EloquentEncryption\\EloquentEncryptionFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "RichardStyles\\EloquentEncryption\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Richard Styles",
+                    "email": "richardstyles@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Allow Eloquent attributes to be encrypted and decrypted using a RSA 4096-bit private keys.",
+            "homepage": "https://github.com/richardstyles/eloquentencryption",
+            "keywords": [
+                "eloquent",
+                "encryption",
+                "richardstyles"
+            ],
+            "support": {
+                "source": "https://github.com/RichardStyles/EloquentEncryption/tree/v3.2"
+            },
+            "time": "2022-06-04T21:46:29+00:00"
         },
         {
             "name": "scssphp/scssphp",
@@ -6812,7 +6912,7 @@
             "support": {
                 "source": "https://github.com/dimti/iseed/tree/master"
             },
-            "time": "2022-02-12T09:19:36+00:00"
+            "time": "2022-11-23T11:34:51+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",
@@ -7416,19 +7516,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wintercms/storm.git",
-                "reference": "6bc2a46b5189d89396bcbf0ff93bcc16cfaca8b0"
+                "reference": "a2959d90946d63e6adfffff40ae283d09a4e2e7f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wintercms/storm/zipball/6bc2a46b5189d89396bcbf0ff93bcc16cfaca8b0",
-                "reference": "6bc2a46b5189d89396bcbf0ff93bcc16cfaca8b0",
+                "url": "https://api.github.com/repos/wintercms/storm/zipball/a2959d90946d63e6adfffff40ae283d09a4e2e7f",
+                "reference": "a2959d90946d63e6adfffff40ae283d09a4e2e7f",
                 "shasum": ""
             },
             "require": {
                 "assetic/framework": "~3.0",
                 "doctrine/dbal": "^2.6",
                 "enshrined/svg-sanitize": "^0.15",
-                "erusev/parsedown-extra": "~0.7",
                 "ext-ctype": "*",
                 "ext-curl": "*",
                 "ext-dom": "*",
@@ -7532,7 +7631,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2022-11-16T17:13:23+00:00"
+            "time": "2022-11-28T01:11:32+00:00"
         },
         {
             "name": "winter/wn-backend-module",
@@ -7540,12 +7639,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wintercms/wn-backend-module.git",
-                "reference": "8972c896735a94bc14fc356ececc30e8cc7cb38b"
+                "reference": "457bd6565586ce9d1ddad318a6991f497f88ca9b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wintercms/wn-backend-module/zipball/8972c896735a94bc14fc356ececc30e8cc7cb38b",
-                "reference": "8972c896735a94bc14fc356ececc30e8cc7cb38b",
+                "url": "https://api.github.com/repos/wintercms/wn-backend-module/zipball/457bd6565586ce9d1ddad318a6991f497f88ca9b",
+                "reference": "457bd6565586ce9d1ddad318a6991f497f88ca9b",
                 "shasum": ""
             },
             "require": {
@@ -7604,20 +7703,20 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2022-11-22T16:42:54+00:00"
+            "time": "2022-11-23T17:30:17+00:00"
         },
         {
             "name": "winter/wn-builder-plugin",
-            "version": "v2.0.6",
+            "version": "dev-dimti",
             "source": {
                 "type": "git",
-                "url": "https://github.com/wintercms/wn-builder-plugin.git",
-                "reference": "b6b499861fb05dbf9ee3fa81aa0dcf4c558475df"
+                "url": "https://github.com/dimti/wn-builder-plugin.git",
+                "reference": "ed5517323336ceb07eec6200f7cab7206f29b58e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wintercms/wn-builder-plugin/zipball/b6b499861fb05dbf9ee3fa81aa0dcf4c558475df",
-                "reference": "b6b499861fb05dbf9ee3fa81aa0dcf4c558475df",
+                "url": "https://api.github.com/repos/dimti/wn-builder-plugin/zipball/ed5517323336ceb07eec6200f7cab7206f29b58e",
+                "reference": "ed5517323336ceb07eec6200f7cab7206f29b58e",
                 "shasum": ""
             },
             "require": {
@@ -7635,7 +7734,6 @@
             "extra": {
                 "installer-name": "builder"
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -7664,21 +7762,11 @@
                 "wintercms"
             ],
             "support": {
-                "discord": "https://discord.gg/D5MFSPH6Ux",
                 "issues": "https://github.com/wintercms/wn-builder-plugin/issues",
+                "discord": "https://discord.gg/D5MFSPH6Ux",
                 "source": "https://github.com/wintercms/wn-builder-plugin"
             },
-            "funding": [
-                {
-                    "url": "https://github.com/wintercms",
-                    "type": "github"
-                },
-                {
-                    "url": "https://opencollective.com/wintercms",
-                    "type": "open_collective"
-                }
-            ],
-            "time": "2022-11-11T01:02:51+00:00"
+            "time": "2022-11-27T06:43:22+00:00"
         },
         {
             "name": "winter/wn-cms-module",
@@ -7686,12 +7774,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wintercms/wn-cms-module.git",
-                "reference": "146fc40c68c6f05b77bc3a82572260a72a8e87e4"
+                "reference": "2c1fdc6f2c5b3d4d20431e051e5e62171e4072ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wintercms/wn-cms-module/zipball/146fc40c68c6f05b77bc3a82572260a72a8e87e4",
-                "reference": "146fc40c68c6f05b77bc3a82572260a72a8e87e4",
+                "url": "https://api.github.com/repos/wintercms/wn-cms-module/zipball/2c1fdc6f2c5b3d4d20431e051e5e62171e4072ec",
+                "reference": "2c1fdc6f2c5b3d4d20431e051e5e62171e4072ec",
                 "shasum": ""
             },
             "require": {
@@ -7750,7 +7838,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2022-11-17T21:18:15+00:00"
+            "time": "2022-11-28T00:59:32+00:00"
         },
         {
             "name": "winter/wn-system-module",
@@ -7758,12 +7846,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wintercms/wn-system-module.git",
-                "reference": "ec09d2a4a4b4894301add4ed88a26d1d6816473f"
+                "reference": "8ec2ed56c07a776b5c565048b1b353ba61cf14c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wintercms/wn-system-module/zipball/ec09d2a4a4b4894301add4ed88a26d1d6816473f",
-                "reference": "ec09d2a4a4b4894301add4ed88a26d1d6816473f",
+                "url": "https://api.github.com/repos/wintercms/wn-system-module/zipball/8ec2ed56c07a776b5c565048b1b353ba61cf14c0",
+                "reference": "8ec2ed56c07a776b5c565048b1b353ba61cf14c0",
                 "shasum": ""
             },
             "require": {
@@ -7823,7 +7911,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2022-11-22T16:42:54+00:00"
+            "time": "2022-11-28T01:37:00+00:00"
         }
     ],
     "packages-dev": [],
@@ -7841,8 +7929,11 @@
         "winter/wn-system-module": 20,
         "winter/wn-backend-module": 20,
         "winter/wn-cms-module": 20,
+        "mrkampf/proxmox-ve": 20,
+        "winter/wn-builder-plugin": 20,
         "flynsarmy/wn-idehelper-plugin": 20,
-        "thegr8dev/iseed": 20
+        "thegr8dev/iseed": 20,
+        "jacob/logbook-plugin": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

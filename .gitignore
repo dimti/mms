@@ -8,6 +8,7 @@
 # Editor ignores
 .idea
 _ide_helper.php
+_ide_helper_models.php
 
 # WinterCMS
 /modules
@@ -15,6 +16,7 @@ _ide_helper.php
 # Plugins
 /plugins/flynsarmy
 /plugins/winter
+/plugins/jacob
 
 # iseed ignore
 /database/seeders
