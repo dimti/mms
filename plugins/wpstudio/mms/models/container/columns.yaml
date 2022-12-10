@@ -5,18 +5,23 @@ columns:
     name:
         label: name
         type: text
+        searchable: true
     code:
         label: code
         type: text
-    description:
-        label: description
+        searchable: true
+    server:
+        relation: server
+        select: code
+    destinationRole:
+        relation: destinationRole
+        select: name
+    status:
+        label: status
         type: text
-    destination_role_id:
-        label: destination_role_id
-        type: number
-    network_type_id:
-        label: network_type_id
-        type: number
+    networkType:
+        relation: networkType
+        select: name
     created_at:
         label: created_at
         type: datetime

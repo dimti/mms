@@ -1,0 +1,88 @@
+fields:
+    hostname:
+        label: Hostname
+        span: auto
+        type: text
+    username:
+        label: Username
+        span: auto
+        type: text
+        placeholder: root
+    password:
+        label: Password
+        span: auto
+        type: sensitive
+        allowCopy: false
+        hideOnTabChange: true
+    port:
+        label: Port
+        span: auto
+        type: number
+        placeholder: 8006
+    auth_type:
+        label: 'Метод авторизации'
+        options:
+            - pam
+            - pve
+        emptyOption: '0'
+        showSearch: true
+        span: auto
+        type: dropdown
+    buttons:
+        type: partial
+    description:
+        label: Description
+        span: auto
+        type: textarea
+    servers:
+        label: Серверы
+        type: partial
+        span: auto
+    sysadmins:
+        label: Администраторы
+        type: partial
+        span: auto
+    cluster_status:
+        label: 'Статус кластера'
+        span: auto
+        type: nestedform
+        disabled: true
+        form:
+            fields:
+                quorate:
+                    label: quorate
+                    span: auto
+                    type: number
+                id:
+                    label: id
+                    span: auto
+                    type: text
+                name:
+                    label: name
+                    span: auto
+                    type: text
+                version:
+                    label: version
+                    span: auto
+                    type: number
+                type:
+                    label: type
+                    span: auto
+                    type: text
+                nodes:
+                    label: nodes
+                    span: auto
+                    type: number
+                more:
+                    label: Дополнительно
+                    span: auto
+                    type: codeeditor
+                    language: javascript
+    _logbook@update:
+        type: jacob_logbook_log
+        limitPerPage: 10
+        startPage: 1
+        showLogRelations:
+        showSoftDeleteRelations:
+        showUndoChangesButton: false
+        refreshFormAfterUndo: false

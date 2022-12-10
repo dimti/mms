@@ -1,0 +1,18 @@
+columns:
+  name:
+    label: name
+    type: text
+    searchable: true
+  code:
+    label: code
+    type: text
+  destinationRole:
+    label: Назначение
+    relation: destinationRole
+    select: name
+  networkType:
+    label: Сеть
+    relation: networkType
+    select: name
+  url_container:
+    type: partial

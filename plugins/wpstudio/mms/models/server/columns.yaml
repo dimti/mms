@@ -2,23 +2,27 @@ columns:
     id:
         label: id
         type: number
-    name:
-        label: name
-        type: text
     code:
         label: code
         type: text
-    type_id:
-        label: type_id
-        type: number
+        searchable: true
+    hostname:
+        label: hostname
+        span: auto
+        type: text
+    serverType:
+        label: Тип
+        relation: serverType
+        select: name
     main_ip_address:
         label: main_ip_address
         type: text
+        searchable: true
+    cluster:
+        relation: cluster
+        select: hostname
     additional_ip_addresses:
         label: additional_ip_addresses
-        type: text
-    description:
-        label: description
         type: text
     created_at:
         label: created_at

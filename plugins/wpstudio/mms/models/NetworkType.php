@@ -1,18 +1,25 @@
 <?php namespace Wpstudio\Mms\Models;
 
+use Illuminate\Support\Collection;
 use Model;
+use Winter\Storm\Database\Relations\HasMany;
 use Winter\Storm\Database\Traits\SoftDelete;
 use Winter\Storm\Database\Traits\Sortable;
 use Winter\Storm\Database\Traits\Validation;
 
 /**
- * Model
+ *
+ * @property Collection|Container[] $containers
+ * @method HasMany containers
  */
 class NetworkType extends Model
 {
     use Validation;
     use SoftDelete;
     use Sortable;
+
+    const CODE_DIRECT = 'direct';
+    const CODE_INNER = 'inner';
 
     protected $dates = ['deleted_at'];
 
@@ -24,8 +31,7 @@ class NetworkType extends Model
     /**
      * @var array Validation rules
      */
-    public $rules = [
-    ];
+    public $rules = [];
 
     /**
      * @var array Attribute names to encode and decode using JSON.

@@ -1,16 +1,17 @@
 fields:
-    name:
-        label: Name
-        span: auto
-        type: text
     code:
         label: Code
         span: auto
         type: text
+    hostname:
+        label: hostname
+        span: auto
+        type: text
     serverType:
-        label: 'serverType'
+        label: serverType
         span: auto
         type: relation
+        emptyOption: '---'
     main_ip_address:
         label: 'Main ip address'
         span: auto
@@ -24,3 +25,133 @@ fields:
         label: Description
         span: auto
         type: textarea
+    buttons:
+        type: partial
+    cluster:
+        label: Кластер
+        type: partial
+        span: auto
+    containers:
+        label: Контейнеры
+        type: partial
+        span: auto
+    sysadmins:
+        label: Администраторы сервера
+        type: partial
+        span: auto
+    cluster_node_status:
+        label: 'Статус ноды по версии кластера'
+        span: left
+        type: nestedform
+        disabled: true
+        form:
+            fields:
+                online:
+                    label: online
+                    span: auto
+                    type: number
+                ip:
+                    label: ip
+                    span: auto
+                    type: text
+                level:
+                    label: level
+                    span: auto
+                    type: text
+                id:
+                    label: id
+                    span: auto
+                    type: text
+                nodeid:
+                    label: nodeid
+                    span: auto
+                    type: number
+                local:
+                    label: local
+                    span: auto
+                    type: number
+                name:
+                    label: name
+                    span: auto
+                    type: text
+                type:
+                    label: type
+                    span: auto
+                    type: text
+                more:
+                    label: Дополнительно
+                    span: auto
+                    type: codeeditor
+                    language: javascript
+    node_status:
+        label: 'Статус ноды'
+        span: left
+        type: nestedform
+        disabled: true
+        form:
+            fields:
+                uptime:
+                    label: uptime
+                    span: auto
+                    type: number
+                node:
+                    label: node
+                    span: auto
+                    type: text
+                level:
+                    label: level
+                    span: auto
+                    type: text
+                status:
+                    label: status
+                    span: auto
+                    type: text
+                maxmem:
+                    label: maxmem
+                    span: auto
+                    type: number
+                mem:
+                    label: mem
+                    span: auto
+                    type: number
+                maxcpu:
+                    label: maxcpu
+                    span: auto
+                    type: number
+                cpu:
+                    label: cpu
+                    span: auto
+                    type: number
+                ssl_fingerprint:
+                    label: ssl_fingerprint
+                    span: auto
+                    type: text
+                id:
+                    label: id
+                    span: auto
+                    type: text
+                maxdisk:
+                    label: maxdisk
+                    span: auto
+                    type: number
+                disk:
+                    label: disk
+                    span: auto
+                    type: number
+                type:
+                    label: type
+                    span: auto
+                    type: text
+                more:
+                    label: Дополнительно
+                    span: auto
+                    type: codeeditor
+                    language: javascript
+    _logbook@update:
+        type: jacob_logbook_log
+        limitPerPage: 10
+        startPage: 1
+        showLogRelations:
+        showSoftDeleteRelations:
+        showUndoChangesButton: false
+        refreshFormAfterUndo: false

@@ -1,0 +1,11 @@
+fields:
+  name:
+    label:
+    type: text
+    span: auto
+  hostname:
+    label: hostname
+    type: text
+  url_cluster:
+    type: partial
+    span: auto

@@ -1,18 +1,25 @@
 <?php namespace Wpstudio\Mms\Models;
 
+use Illuminate\Support\Collection;
 use Model;
+use Winter\Storm\Database\Relations\HasMany;
 use Winter\Storm\Database\Traits\SoftDelete;
 use Winter\Storm\Database\Traits\Sortable;
 use Winter\Storm\Database\Traits\Validation;
 
 /**
- * Model
+ * @property Collection|Server[] $servers
+ * @method HasMany servers
  */
 class ServerType extends Model
 {
     use Validation;
     use SoftDelete;
     use Sortable;
+
+    const CODE_PROXMOX = 'proxmox';
+    const CODE_BARE_METAL = 'bare-metal';
+    const CODE_CAPROVER = 'caprover';
 
     protected $dates = ['deleted_at'];
 
@@ -35,4 +42,19 @@ class ServerType extends Model
     public $hasMany = [
         'servers' => Server::class
     ];
+
+    public static function getProxmoxServerType(): self
+    {
+        return self::whereCode(self::CODE_PROXMOX)->firstOrFail();
+    }
+
+    public static function getBareMetalServerType(): self
+    {
+        return self::whereCode(self::CODE_BARE_METAL)->firstOrFail();
+    }
+
+    public static function getCaproverServerType(): self
+    {
+        return self::whereCode(self::CODE_CAPROVER)->firstOrFail();
+    }
 }

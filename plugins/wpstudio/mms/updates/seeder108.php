@@ -1,8 +1,6 @@
 <?php namespace Wpstudio\Mms\Updates;
 
 use Seeder;
-use DB;
-use Wpstudio\Mms\Models\ServerType;
 
 class Seeder108 extends Seeder
 {
@@ -32,6 +30,12 @@ class Seeder108 extends Seeder
                 'name' => 'Redis',
                 'description' => '',
                 'sort_order' => 4,
+            ],
+            [
+                'code' => 's3',
+                'name' => 'S3',
+                'description' => '',
+                'sort_order' => 5,
             ],
         ]);
 

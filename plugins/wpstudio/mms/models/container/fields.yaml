@@ -1,21 +1,303 @@
 fields:
-    name:
-        label: Name
-        span: auto
-        type: text
     code:
         label: Code
         span: auto
         type: number
+    name:
+        label: Name
+        span: right
+        comment: Название Linux-контейнера
+        type: text
+    actions@update:
+        type: partial
+        span: right
     description:
         label: Description
-        span: auto
+        span: left
         type: textarea
-    destination_role_id:
+    destinationRole:
         label: 'Destination role id'
-        span: auto
+        span: right
         type: relation
-    network_type_id:
+        emptyOption: '---'
+    role_payload:
+        label: 'Настройки'
+        span: right
+        type: nestedform
+        form:
+            fields:
+                nginx_site_code:
+                    label: Альтернативное название файла конфигурации nginx
+                    comment: По-умолчанию - название Linux-контейнера
+                    type: text
+                    trigger:
+                        action: show
+                        field: ^destinationRole
+                        condition: value[2]
+    networkType:
         label: 'Network type id'
-        span: auto
+        span: left
         type: relation
+        emptyOption: '---'
+    action_check_nginx_site_code@update:
+        type: partial
+        span: right
+        trigger:
+            action: show
+            field: ^destinationRole
+            condition: value[2]
+    server:
+        label: Сервер
+        type: partial
+        span: left
+    lxc_status:
+        label: 'Статус LXC'
+        span: right
+        type: nestedform
+        disabled: true
+        form:
+            fields:
+                vmid:
+                    label: vmid
+                    span: auto
+                    type: number
+                name:
+                    label: name
+                    span: auto
+                    type: text
+                type:
+                    label: type
+                    span: auto
+                    type: dropdown
+                    options:
+                        lxc: lxc
+                        qemu: qemu
+                    emptyOption: '---'
+                uptime:
+                    label: uptime
+                    span: auto
+                    type: number
+                template:
+                    label: template
+                    span: auto
+                    type: text
+                maxswap:
+                    label: maxswap
+                    span: auto
+                    type: number
+                swap:
+                    label: swap
+                    span: auto
+                    type: number
+                maxmem:
+                    label: maxmem
+                    span: auto
+                    type: number
+                mem:
+                    label: mem
+                    span: auto
+                    type: number
+                cpus:
+                    label: cpus
+                    span: auto
+                    type: number
+                cpu:
+                    label: cpu
+                    span: auto
+                    type: number
+                disk:
+                    label: disk
+                    span: auto
+                    type: text
+                maxdisk:
+                    label: maxdisk
+                    span: auto
+                    type: text
+                diskwrite:
+                    label: diskwrite
+                    span: auto
+                    type: number
+                diskread:
+                    label: diskread
+                    span: auto
+                    type: number
+                netin:
+                    label: netin
+                    span: auto
+                    type: number
+                netout:
+                    label: netout
+                    span: auto
+                    type: number
+                lock:
+                    label: lock
+                    span: auto
+                    type: text
+                status:
+                    label: status
+                    span: auto
+                    type: dropdown
+                    options:
+                        running: running
+                        stopped: stopped
+                    emptyOption: '---'
+                pid:
+                    label: pid
+                    span: auto
+                    type: number
+                more:
+                    label: Дополнительно
+                    span: auto
+                    type: codeeditor
+                    language: javascript
+    lxc_config:
+        label: 'Конфигурация LXC'
+        span: auto
+        type: nestedform
+        disabled: true
+        form:
+            fields:
+                onboot:
+                    label: onboot
+                    span: auto
+                    type: switch
+                unprivileged:
+                    label: unprivileged
+                    span: auto
+                    type: checkbox
+                arch:
+                    label: arch
+                    span: auto
+                    type: text
+                cores:
+                    label: cores
+                    span: auto
+                    type: number
+                digest:
+                    label: digest
+                    span: auto
+                    type: text
+                hostname:
+                    label: hostname
+                    span: auto
+                    type: text
+                memory:
+                    label: memory
+                    span: auto
+                    type: number
+                    commentAbove: MB
+                swap:
+                    label: swap
+                    span: auto
+                    type: number
+                    commentAbove: MB
+                nameserver:
+                    label: nameserver
+                    span: auto
+                    type: text
+                net0:
+                    label: net0
+                    span: auto
+                    type: text
+                ostype:
+                    label: ostype
+                    span: auto
+                    type: text
+                parent:
+                    label: parent
+                    span: auto
+                    type: text
+                rootfs:
+                    label: rootfs
+                    span: auto
+                    type: text
+                snaptime:
+                    label: snaptime
+                    span: auto
+                    type: number
+                startup:
+                    label: startup
+                    span: auto
+                    type: text
+                lock:
+                    label: lock
+                    span: auto
+                    type: text
+                more:
+                    label: Дополнительно
+                    span: auto
+                    type: codeeditor
+                    language: javascript
+    replication:
+        label: Репликация
+        type: repeater
+        span: left
+        disabled: true
+        form:
+            fields:
+                duration:
+                    label: duration
+                    span: auto
+                    type: number
+                fail_count:
+                    label: fail_count
+                    span: auto
+                    type: number
+                guest:
+                    label: guest
+                    span: auto
+                    type: number
+                id:
+                    label: id
+                    span: auto
+                    type: text
+                jobnum:
+                    label: jobnum
+                    span: auto
+                    type: number
+                last_sync:
+                    label: last_sync
+                    span: auto
+                    type: number
+                last_try:
+                    label: last_try
+                    span: auto
+                    type: number
+                next_sync:
+                    label: next_sync
+                    span: auto
+                    type: number
+                source:
+                    label: source
+                    span: auto
+                    type: text
+                target:
+                    label: target
+                    span: auto
+                    type: text
+                type:
+                    label: type
+                    span: auto
+                    type: text
+                vmtype:
+                    label: vmtype
+                    span: auto
+                    type: text
+    mountpoints:
+        label: Дополнительные диски
+        type: repeater
+        span: right
+        disabled: true
+        form:
+            fields:
+                mp:
+                    label: Конфигурация точки монтирования
+                    type: text
+    _logbook@update:
+        type: jacob_logbook_log
+        limitPerPage: 10
+        startPage: 1
+        showLogRelations:
+        showSoftDeleteRelations:
+        showUndoChangesButton: false
+        refreshFormAfterUndo: false

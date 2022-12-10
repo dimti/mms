@@ -21,3 +21,45 @@
 1.0.8:
     - '+ dictionaries seed'
     - seeder108.php
+1.0.9:
+    - 'Created table wpstudio_mms_clusters'
+    - builder_table_create_wpstudio_mms_clusters.php
+1.0.10:
+    - '+ cluster_id into table wpstudio_mms_servers'
+    - builder_table_update_wpstudio_mms_servers.php
+1.0.11:
+    - '+ lxc config and status itno table wpstudio_mms_containers'
+    - builder_table_update_wpstudio_mms_containers.php
+1.0.12:
+    - '+ server_id into table wpstudio_mms_containers'
+    - builder_table_update_wpstudio_mms_containers_2.php
+1.0.13:
+    - '+ mountpoints into table wpstudio_mms_containers'
+    - builder_table_update_wpstudio_mms_containers_3.php
+1.0.14:
+    - '+ cluster_status into table wpstudio_mms_clusters'
+    - builder_table_update_wpstudio_mms_clusters.php
+1.0.15:
+    - '+ cluster_node_status and node_status into table wpstudio_mms_servers'
+    - builder_table_update_wpstudio_mms_servers_2.php
+1.0.16:
+    - 'Created table wpstudio_mms_sysadmins'
+    - builder_table_create_wpstudio_mms_sysadmins.php
+1.0.17:
+    - '+ sysadmins cluster and servers relations'
+    - migration1017.php
+1.0.18:
+    - '* remove name & add hostname into table wpstudio_mms_servers'
+    - builder_table_update_wpstudio_mms_servers_3.php
+1.0.19:
+    - '- remove name from table wpstudio_mms_clusters'
+    - builder_table_update_wpstudio_mms_clusters_2.php
+1.0.20:
+    - '* password nullable in table wpstudio_mms_clusters'
+    - builder_table_update_wpstudio_mms_clusters_3.php
+1.0.21:
+    - '+ role_payload into table wpstudio_mms_containers'
+    - builder_table_update_wpstudio_mms_containers_4.php
+1.0.22:
+    - '+ replication into table wpstudio_mms_containers'
+    - builder_table_update_wpstudio_mms_containers_5.php

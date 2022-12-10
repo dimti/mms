@@ -1,0 +1,22 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+clusters:
+    label: Кластеры
+    view:
+        list: _relation_clusters_view_list.yaml
+        showSearch: true
+        toolbarButtons: add|unlink
+    manage:
+        list: _relation_clusters_manage_list.yaml
+        showSearch: true
+servers:
+    label: Серверы
+    view:
+        list: _relation_servers_view_list.yaml
+        showSearch: true
+        toolbarButtons: add|unlink
+    manage:
+        list: _relation_servers_manage_list.yaml
+        showSearch: true

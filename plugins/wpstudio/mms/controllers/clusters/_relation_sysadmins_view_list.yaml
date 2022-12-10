@@ -1,0 +1,12 @@
+columns:
+  id:
+    label: id
+    type: number
+  name:
+    label: name
+    type: text
+  nickname:
+    label: nickname
+    type: text
+  url_sysadmin:
+    type: partial

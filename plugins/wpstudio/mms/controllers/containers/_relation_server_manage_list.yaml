@@ -1,0 +1,13 @@
+columns:
+  id:
+    label: id
+    type: number
+  name:
+    label: name
+    type: text
+  code:
+    label: code
+    type: text
+  main_ip_address:
+    label: main_ip_address
+    type: text

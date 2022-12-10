@@ -1,0 +1,23 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+servers:
+    label: Серверы
+    view:
+        list: _relation_servers_view_list.yaml
+        showSearch: true
+        toolbarButtons: add|unlink
+    manage:
+        list: _relation_servers_manage_list.yaml
+        showSearch: true
+sysadmins:
+    label: Администраторы
+    view:
+        list: _relation_sysadmins_view_list.yaml
+        showSearch: true
+        toolbarButtons: create|add|unlink
+    manage:
+        list: _relation_sysadmins_manage_list.yaml
+        form: _relation_sysadmins_manage_form.yaml
+        showSearch: true

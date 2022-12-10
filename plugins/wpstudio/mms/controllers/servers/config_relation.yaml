@@ -1,0 +1,31 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+cluster:
+    label: Кластер
+    manage:
+        list: _relation_cluster_manage_list.yaml
+        showSearch: true
+    view:
+        form: _relation_cluster_view_form.yaml
+        toolbarButtons: add|unlink
+containers:
+    label: Контейнеры
+    view:
+        list: _relation_containers_view_list.yaml
+        showSearch: true
+        toolbarButtons: remove
+    manage:
+        list: _relation_containers_manage_list.yaml
+        showSearch: true
+sysadmins:
+    label: Администраторы сервера
+    view:
+        list: _relation_sysadmins_view_list.yaml
+        showSearch: true
+        toolbarButtons: create|add|unlink|remove
+    manage:
+        list: _relation_sysadmins_manage_list.yaml
+        form: _relation_sysadmins_manage_form.yaml
+        showSearch: true

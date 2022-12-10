@@ -1,0 +1,38 @@
+<?php
+/**
+ * @var $model
+ */
+
+use Wpstudio\Mms\Models;
+
+assert($model instanceof Models\Container);
+
+$isExistsMasterNginxProxy = $model->server->hasExistsMasterNginxProxy();
+?>
+<div class="form-buttons">
+    <div class="loading-indicator-container">
+        <button
+            type="button"
+            <?php if (!$isExistsMasterNginxProxy):?>
+                disabled="disabled"
+            <?php endif;?>
+            data-request="onCheckNginxSiteCode"
+            data-load-indicator="Success"
+            data-request-success="document.location.reload()"
+            class="btn btn-primary">
+            Проверить конфигурационный файл nginx
+        </button>
+    </div>
+</div>
+
+<?php if ($message = \Session::get('onCheckNginxSiteCodeMessage')): ?>
+    <p style="color: green; font-weight: bold;">
+        <?=$message?>
+    </p>
+<?php endif; ?>
+
+<?php if (!$isExistsMasterNginxProxy):?>
+    <p style="color: orange; font-weight: bold;">
+        У сервера не определен MasterNginxContainer. Операции с сайтом недоступны
+    </p>
+<?php endif;?>

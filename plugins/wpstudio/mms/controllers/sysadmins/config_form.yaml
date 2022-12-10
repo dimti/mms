@@ -1,0 +1,10 @@
+name: Sysadmins
+form: $/wpstudio/mms/models/sysadmin/fields.yaml
+modelClass: Wpstudio\Mms\Models\Sysadmin
+defaultRedirect: wpstudio/mms/sysadmins
+create:
+    redirect: 'wpstudio/mms/sysadmins/update/:id'
+    redirectClose: wpstudio/mms/sysadmins
+update:
+    redirect: wpstudio/mms/sysadmins
+    redirectClose: wpstudio/mms/sysadmins

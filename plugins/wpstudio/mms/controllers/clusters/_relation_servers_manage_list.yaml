@@ -1,0 +1,19 @@
+columns:
+  id:
+    label: id
+    type: number
+  code:
+    label: code
+    type: text
+    searchable: true
+  hostname:
+    label: hostname
+    type: text
+    searchable: true
+  serverType:
+    label: Тип
+    relation: serverType
+    select: name
+  main_ip_address:
+    label: main_ip_address
+    type: text

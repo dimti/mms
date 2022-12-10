@@ -1,0 +1,12 @@
+columns:
+  id:
+    label: id
+    type: number
+  code:
+    label: code
+    type: text
+    searchable: true
+  hostname:
+    label: hostname
+    type: text
+    searchable: true

@@ -10,14 +10,22 @@ navigation:
         url: wpstudio/mms/servers
         icon: icon-server
         sideMenu:
-            servers:
+            mms-clusters:
+                label: Кластеры
+                url: wpstudio/mms/clusters
+                icon: icon-th-list
+            mms-servers:
                 label: Servers
                 url: wpstudio/mms/servers
                 icon: icon-server
-            containers:
+            mms-containers:
                 label: Containers
                 url: wpstudio/mms/containers
                 icon: icon-linux
+            mms-rescue:
+                label: Rescue
+                url: wpstudio/mms/rescue
+                icon: icon-ioxhost
     mms-dictionaries:
         label: Dictionaries
         url: wpstudio/mms/servertypes
@@ -35,3 +43,7 @@ navigation:
                 label: 'Network Types'
                 url: wpstudio/mms/networktypes
                 icon: icon-navicon
+            mms-dictionaries-sysadmins:
+                label: 'Системные администраторы'
+                url: wpstudio/mms/sysadmins
+                icon: icon-users

@@ -1,0 +1,121 @@
+<?php
+/**
+ * @var $model
+ */
+
+use Wpstudio\Mms\Models;
+
+assert($model instanceof Models\Container);
+
+$isCorrectLxcConfiguration = true;
+
+try {
+    $model->getLinuxContainer();
+} catch (\Wpstudio\Mms\Classes\Exceptions\MmsLxcException $e) {
+    $isCorrectLxcConfiguration = false;
+}
+?>
+<?php if ($isCorrectLxcConfiguration):?>
+    <div class="form-buttons">
+        <div class="loading-indicator-container">
+            <button
+                    type="button"
+                    data-request="onUpdateContainer"
+                    data-load-indicator="Success"
+                    data-request-success="$.oc.flashMsg({text: 'Информация обновлена. Перезагружаем страницу...', 'class': 'success', 'interval': 2}); window.setTimeout('document.location.reload()', 2000); return false;"
+                    class="btn btn-primary">
+                Обновить информацию о контейнере
+            </button>
+        </div>
+    </div>
+
+    <?php if ($model->destinationRole && $model->destinationRole->code == Models\DestinationRole::CODE_SITE): ?>
+        <?php
+        $isExistsMasterNginxProxy = $model->server->hasExistsMasterNginxProxy();
+
+        $otherServersInCluster = $model->server->cluster->servers()->get()->where('code', '!=', $model->server->code)->keyBy('id');
+
+        $hasExistsOtherServersInCluster = !!$otherServersInCluster->count();
+
+        if ($hasExistsOtherServersInCluster):
+            $isExistsReplicasOnTargets = $otherServersInCluster->map(fn(Models\Server $server) => $model->hasExistsReplicaOnTarget($server->code));
+            ?>
+            <div class="form-buttons">
+                <div class="loading-indicator-container">
+                    <div class="form-group dropdown-field span-left">
+                        <label for="Form-field-MoveSite-targetServer">Сервер назначения</label>
+                        <!-- Dropdown -->
+                        <select
+                                onchange="onUpdateDataRequestConfirmOnChangeMoveSiteDestination(this.value)"
+                                id="Form-field-MoveSite-targetServer"
+                                name="MoveSite[destinationServerId]"
+                            <?php if (!$isExistsMasterNginxProxy): ?>
+                                disabled="disabled"
+                            <?php endif; ?>
+                                class="form-control custom-select">
+                            <option value="0">---</option>
+                            <?php foreach ($otherServersInCluster as $server): ?>
+                                <option value="<?= $server->id ?>"><?= $server->code ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                    <div class="form-group text-field span-left">
+                        <button
+                                id="Form-button-MoveSite"
+                                type="button"
+                                disabled="disabled"
+                                data-request="onMoveSite"
+                                data-load-indicator="Success"
+                                data-request-success="document.location.reload()"
+                                class="btn btn-primary">
+                            Перенести сайт на выбранный сервер
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <?php if ($message = \Session::get('onMoveSiteMessage')): ?>
+                <p style="color: green; font-weight: bold;">
+                    <?=$message?>
+                </p>
+            <?php endif; ?>
+
+            <script>
+                const isExistsReplicasOnTargets = <?=json_encode($isExistsMasterNginxProxy)?>
+
+                function onUpdateDataRequestConfirmOnChangeMoveSiteDestination(serverId) {
+                    let $button = jQuery('#Form-button-MoveSite');
+
+                    if (serverId > 0 && isExistsReplicasOnTargets[serverId]) {
+                        $button.attr('data-request-confirm', 'Сайт не реплицирован на указанный сервер. Перенос может занять длительное время. Продолжить?');
+                    } else {
+                        $button.removeAttr('data-request-confirm');
+                    }
+
+                    if (serverId == 0) {
+                        $button.attr('disabled', 'disabled');
+                    } else {
+                        $button.removeAttr('disabled');
+                    }
+                }
+            </script>
+
+            <?php if (!$isExistsMasterNginxProxy): ?>
+                <p style="color: orange; font-weight: bold;">
+                    У сервера не определен MasterNginxContainer. Операции с сайтом недоступны
+                </p>
+            <?php endif;?>
+        <?php endif; ?>
+    <?php endif; ?>
+
+
+    <?php if (!!$model->getLinuxContainer()->replication->count()): ?>
+        <p style="color: green; font-weight: bold;">
+            Контейнер реплицирован
+        </p>
+    <?php endif; ?>
+<?php else: ?>
+    <p style="color: orange; font-weight: bold;">
+        LXC-контейнер нуждается в перенастройке: <?=$e->getMessage()?>
+    </p>
+<?php endif;?>

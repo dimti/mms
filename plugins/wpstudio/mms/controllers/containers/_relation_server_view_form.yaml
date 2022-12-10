@@ -1,0 +1,16 @@
+fields:
+  name:
+    label: name
+    type: text
+    span: auto
+  code:
+    label: code
+    type: text
+    span: auto
+  main_ip_address:
+    label:
+    type: text
+    span: auto
+  url_server:
+    type: partial
+    span: auto

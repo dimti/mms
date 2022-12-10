@@ -1,0 +1,26 @@
+columns:
+    id:
+        label: id
+        type: number
+    hostname:
+        label: hostname
+        type: text
+        searchable: true
+    username:
+        label: username
+        type: text
+    port:
+        label: port
+        type: text
+    auth_type:
+        label: auth_type
+        type: text
+    created_at:
+        label: created_at
+        type: datetime
+    updated_at:
+        label: updated_at
+        type: datetime
+    deleted_at:
+        label: deleted_at
+        type: datetime

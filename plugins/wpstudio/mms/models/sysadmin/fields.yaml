@@ -1,0 +1,28 @@
+fields:
+    name:
+        label: Name
+        span: auto
+        type: text
+    nickname:
+        label: Nick
+        span: auto
+        type: text
+    clusters:
+        label: Proxmox-кластеры
+        type: partial
+        span: left
+    ssh_keys:
+        label: 'SSH keys'
+        prompt: 'Добавить новый SSH-ключ'
+        style: default
+        span: right
+        type: repeater
+        form:
+            fields:
+                pubkey:
+                    label: Публичный SSH-ключ
+                    type: textarea
+    servers:
+        label: Серверы
+        type: partial
+        span: left

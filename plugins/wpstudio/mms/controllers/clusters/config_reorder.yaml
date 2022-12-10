@@ -1,0 +1,4 @@
+title: Clusters
+modelClass: Wpstudio\Mms\Models\Cluster
+toolbar:
+    buttons: reorder_toolbar

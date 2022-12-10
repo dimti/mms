@@ -1,0 +1,10 @@
+name: Clusters
+form: $/wpstudio/mms/models/cluster/fields.yaml
+modelClass: Wpstudio\Mms\Models\Cluster
+defaultRedirect: wpstudio/mms/clusters
+create:
+    redirect: 'wpstudio/mms/clusters/update/:id'
+    redirectClose: wpstudio/mms/clusters
+update:
+    redirect: wpstudio/mms/clusters
+    redirectClose: wpstudio/mms/clusters

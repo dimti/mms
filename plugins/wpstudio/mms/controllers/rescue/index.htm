@@ -1,0 +1,56 @@
+<div class="form-buttons">
+    <div class="loading-indicator-container">
+        <div class="layout-row">
+            <div class="form-group text-field span-left">
+                <form>
+                    <div class="form-group text-field span-left">
+                        <label for="Form-field-ip">Username</label>
+                        <!-- Text -->
+                        <input type="text" name="ip" id="Form-field-ip" placeholder="12.34.56.78" class="form-control" autocomplete="off">
+                    </div>
+                    <div class="form-group text-field span-left">
+                        <label for="Form-field-password">Password</label>
+                        <!-- Text -->
+                        <input type="text" onclick="this.type='password'" name="password" id="Form-field-password" class="form-control" autocomplete="off">
+                    </div>
+                    <div class="form-group dropdown-field span-left">
+                        <label for="Form-field-proxmoxMajorVersion">Версия Proxmox VE</label>
+                        <!-- Dropdown -->
+                        <select id="Form-field-proxmoxMajorVersion" name="proxmoxMajorVersion" class="form-control custom-select">
+                            <option value="7">7.x</option>
+                            <option value="6">6.x</option>
+                        </select>
+                    </div>
+                    <div class="form-group text-field span-right">
+                        <label for="Form-field-hostname">Proxmox Hostname</label>
+                        <!-- Text -->
+                        <input type="text" name="hostname" id="Form-field-hostname" placeholder="code.domain.zone" class="form-control" autocomplete="off">
+                    </div>
+                    <div class="form-group text-field span-left">
+                        <p>
+                            <button
+                                    type="button"
+                                    data-request="onSetupHetznerProxmoxServer"
+                                    data-load-indicator="Success"
+                                    class="btn btn-primary">
+                                Замутить сервер на hetzner (You mast be preinstalled ZFS)
+                            </button>
+                        </p>
+                    </div>
+                    <div class="form-group text-field span-right">
+                        <p>
+                            <button
+                                    type="button"
+                                    data-request="onPostInstallationActions"
+                                    data-load-indicator="Success"
+                                    class="btn btn-primary">
+                                Выполнить postinstall и настроить сеть
+                            </button>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>

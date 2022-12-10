@@ -1,0 +1,20 @@
+fields:
+  name:
+    label: name
+    type: text
+    span: auto
+  nickname:
+    label: nickname
+    type: text
+    span: auto
+  ssh_keys:
+    label: 'SSH keys'
+    prompt: 'Добавить новый SSH-ключ'
+    style: default
+    span: full
+    type: repeater
+    form:
+      fields:
+        pubkey:
+          label: Публичный SSH-ключ
+          type: textarea

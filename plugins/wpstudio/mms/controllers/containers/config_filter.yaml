@@ -1,0 +1,32 @@
+# ===================================
+# Filter Scope Definitions
+# ===================================
+
+scopes:
+    cluster:
+        label: Кластер
+        modelClass: Wpstudio\Mms\Models\Cluster
+        nameFrom: hostname
+        scope: cluster
+    server:
+        label: Сервер
+        modelClass: Wpstudio\Mms\Models\Server
+        options: getServerOptionsDependByCluster
+        conditions: server_id in (:filtered)
+        dependsOn: cluster
+    destinationRole:
+        label: Роль
+        modelClass: Wpstudio\Mms\Models\DestinationRole
+        nameFrom: name
+        conditions: destination_role_id in (:filtered)
+    status:
+        label: Running
+        type: switch
+        conditions:
+            - "JSON_UNQUOTE(JSON_EXTRACT(lxc_status, '$.status')) <> 'running'"
+            - "JSON_UNQUOTE(JSON_EXTRACT(lxc_status, '$.status')) = 'running'"
+    networkType:
+        label: Сеть
+        modelClass: Wpstudio\Mms\Models\NetworkType
+        nameFrom: name
+        conditions: network_type_id in (:filtered)

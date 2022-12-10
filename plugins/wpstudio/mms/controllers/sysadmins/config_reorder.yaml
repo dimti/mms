@@ -1,0 +1,4 @@
+title: Sysadmins
+modelClass: Wpstudio\Mms\Models\Sysadmin
+toolbar:
+    buttons: reorder_toolbar

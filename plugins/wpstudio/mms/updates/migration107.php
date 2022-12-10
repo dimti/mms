@@ -3,7 +3,6 @@
 use Schema;
 use Winter\Storm\Database\Schema\Blueprint;
 use Winter\Storm\Database\Updates\Migration;
-use Wpstudio\Mms\Models\ServerType;
 
 class Migration107 extends Migration
 {
