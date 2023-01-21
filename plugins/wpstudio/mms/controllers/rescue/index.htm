@@ -4,54 +4,72 @@
             <div class="form-group text-field span-left">
                 <form>
                     <div class="form-group text-field span-left">
-                        <label for="Form-field-ip">Username</label>
+                        <label for="Form-field-ip">Server IP</label>
                         <!-- Text -->
                         <input type="text" name="ip" id="Form-field-ip" placeholder="12.34.56.78" class="form-control" autocomplete="off">
                     </div>
-                    <div class="form-group text-field span-left">
+                    <div class="form-group text-field span-right">
                         <label for="Form-field-password">Password</label>
                         <!-- Text -->
                         <input type="text" onclick="this.type='password'" name="password" id="Form-field-password" class="form-control" autocomplete="off">
                     </div>
-                    <div class="form-group text-field span-right">
-                        <label for="Form-field-isoPath">ISO path</label>
-                        <!-- Text -->
-                        <input type="text" name="isoPath" id="Form-field-isoPath" class="form-control" autocomplete="off">
+                    <div class="col-sm-6">
+                        <h2>1.</h2>
+                        <div class="form-group dropdown-field">
+                            <label for="Form-field-proxmoxVersionChooser">Тип установки</label>
+                            <!-- Dropdown -->
+                            <select id="Form-field-proxmoxVersionChooser"
+                                    name="proxmoxVersionChooser"
+                                    class="form-control custom-select"
+                                    onchange="if (this.value == 'iso') { $('#versionMajor').hide(); $('#versionISO').show(); } else { $('#versionMajor').shadowRoot(); $('#versionISO').hidden(); }"
+                            >
+                                <option value="major">Мажорная версия</option>
+                                <option value="iso">ISO-образ</option>
+                            </select>
+                        </div>
+                        <div class="form-group dropdown-field" style="display: block;" id="versionMajor">
+                            <label for="Form-field-proxmoxMajorVersion">Версия Proxmox VE</label>
+                            <!-- Dropdown -->
+                            <select id="Form-field-proxmoxMajorVersion" name="proxmoxMajorVersion" class="form-control custom-select">
+                                <option value="7">7.x</option>
+                                <option value="6">6.x</option>
+                            </select>
+                        </div>
+                        <div class="form-group text-field" style="display: none;" id="versionISO">
+                            <label for="Form-field-isoPath">ISO path</label>
+                            <!-- Text -->
+                            <input type="text" name="isoPath" id="Form-field-isoPath" class="form-control" autocomplete="off">
+                        </div>
+                        <div class="form-group text-field">
+                            <p>
+                                <button
+                                        type="button"
+                                        data-request="onSetupHetznerProxmoxServer"
+                                        data-load-indicator="Success"
+                                        class="btn btn-primary">
+                                    Замутить сервер на hetzner (You mast be preinstalled ZFS)
+                                </button>
+                            </p>
+                        </div>
                     </div>
-                    <div class="form-group dropdown-field span-left">
-                        <label for="Form-field-proxmoxMajorVersion">Версия Proxmox VE</label>
-                        <!-- Dropdown -->
-                        <select id="Form-field-proxmoxMajorVersion" name="proxmoxMajorVersion" class="form-control custom-select">
-                            <option value="7">7.x</option>
-                            <option value="6">6.x</option>
-                        </select>
-                    </div>
-                    <div class="form-group text-field span-right">
-                        <label for="Form-field-hostname">Proxmox Hostname</label>
-                        <!-- Text -->
-                        <input type="text" name="hostname" id="Form-field-hostname" placeholder="code.domain.zone" class="form-control" autocomplete="off">
-                    </div>
-                    <div class="form-group text-field span-left">
-                        <p>
-                            <button
-                                    type="button"
-                                    data-request="onSetupHetznerProxmoxServer"
-                                    data-load-indicator="Success"
-                                    class="btn btn-primary">
-                                Замутить сервер на hetzner (You mast be preinstalled ZFS)
-                            </button>
-                        </p>
-                    </div>
-                    <div class="form-group text-field span-right">
-                        <p>
-                            <button
-                                    type="button"
-                                    data-request="onPostInstallationActions"
-                                    data-load-indicator="Success"
-                                    class="btn btn-primary">
-                                Выполнить postinstall и настроить сеть
-                            </button>
-                        </p>
+                    <div class="col-sm-6">
+                        <h2>2.</h2>
+                        <div class="form-group text-field">
+                            <label for="Form-field-hostname">Proxmox Hostname</label>
+                            <!-- Text -->
+                            <input type="text" name="hostname" id="Form-field-hostname" placeholder="code.domain.zone" class="form-control" autocomplete="off">
+                        </div>
+                        <div class="form-group text-field">
+                            <p>
+                                <button
+                                        type="button"
+                                        data-request="onPostInstallationActions"
+                                        data-load-indicator="Success"
+                                        class="btn btn-primary">
+                                    Выполнить postinstall и настроить сеть
+                                </button>
+                            </p>
+                        </div>
                     </div>
                 </form>
             </div>
