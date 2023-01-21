@@ -4,6 +4,9 @@ use Collective\Remote\Connection;
 use Winter\Storm\Exception\ValidationException;
 use Winter\Storm\Extension\ExtensionBase;
 use Winter\Storm\Support\Facades\Http;
+use Wpstudio\Mms\Classes\Cli;
+use Wpstudio\Mms\Classes\Exceptions\MmsCliException;
+use Wpstudio\Mms\Classes\Exceptions\MmsCliFileNotFoundException;
 use Wpstudio\Mms\Classes\Helpers\FileContentHelper;
 use Wpstudio\Mms\Classes\Helpers\SshHelper;
 use Validator;
@@ -14,9 +17,11 @@ class SetupHetznerProxmoxServer extends ExtensionBase
     const ISO_PROXMOX_VE_FILE_NAME_PREFIX = 'proxmox-ve_';
 
     private Connection $sshConnection;
+    private Cli $cli;
 
     public string $ip;
     public string $password;
+    public ?string $isoPath;
     public int $proxmoxMajorVersion;
 
     private int $proxmoxMinorVersion;
@@ -24,6 +29,9 @@ class SetupHetznerProxmoxServer extends ExtensionBase
     private array $rulesInput = [
         'ip' => 'required|ip',
         'password' => 'required',
+        'isoPath' => [
+            'regex:#^(/)?([^/\0]+(/)?)+$#'
+        ],
         'proxmoxMajorVersion' => 'required|integer|in:6,7',
     ];
 
@@ -65,12 +73,15 @@ class SetupHetznerProxmoxServer extends ExtensionBase
     private function prepareSshConnection(): void
     {
         $this->sshConnection = SshHelper::getConnection($this->ip, $this->password);
+
+        $this->cli = new Cli($this->sshConnection);
     }
 
     private function prepareInputVars(): void
     {
         $this->ip = input('ip');
         $this->password = input('password');
+        $this->isoPath = input('isoPath');
         $this->proxmoxMajorVersion = input('proxmoxMajorVersion');
     }
 
@@ -107,6 +118,7 @@ class SetupHetznerProxmoxServer extends ExtensionBase
             [
                 'ip' => $this->ip,
                 'password' => $this->password,
+                'isoPath' => $this->isoPath,
                 'proxmoxMajorVersion' => $this->proxmoxMajorVersion,
             ],
             $this->rulesInput,
@@ -148,18 +160,55 @@ class SetupHetznerProxmoxServer extends ExtensionBase
         );
     }
 
+    private function getActualIsoPathForInstall(): string
+    {
+        if ($this->hasIsoPath()) {
+            return $this->getIsoPath();
+        } else {
+            return sprintf(
+                './%s',
+                $this->getProxmoxIsoFileName()
+            );
+        }
+    }
+
+    /**
+     * @return void
+     * @throws MmsCliException
+     * @throws MmsCliFileNotFoundException
+     */
     private function downloadIsoAndStartQemu(): void
     {
-        $this->sshConnection->run([
+        if ($this->hasIsoPath()) {
+            $this->cli->checkExistsFile($this->getIsoPath());
+        } else {
+            $this->cli->run([
+                sprintf(
+                    'wget %s%s',
+                    self::PROXMOX_DOWNLOAD_URL,
+                    $this->getProxmoxIsoFileName()
+                ),
+            ]);
+        }
+
+        $this->cli->run([
             sprintf(
-                'PVE_ISO=%s',
-                $this->getProxmoxIsoFileName()
-            ),
-            sprintf(
-                'wget %s$PVE_ISO',
-                self::PROXMOX_DOWNLOAD_URL
-            ),
-            'qemu-system-x86_64 -enable-kvm -smp 4 -m 4096 -boot d -cdrom ./$PVE_ISO -drive file=/dev/nvme0n1,format=raw,media=disk,if=virtio -drive file=/dev/nvme1n1,format=raw,media=disk,if=virtio -vnc 127.0.0.1:1 &'
+                'qemu-system-x86_64 -enable-kvm -smp 4 -m 4096 -boot d -cdrom %s -drive file=/dev/nvme0n1,format=raw,media=disk,if=virtio -drive file=/dev/nvme1n1,format=raw,media=disk,if=virtio -vnc 127.0.0.1:1 &',
+                $this->getActualIsoPathForInstall()
+            )
         ]);
+    }
+
+    public function hasIsoPath(): bool
+    {
+        return !is_null($this->isoPath);
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getIsoPath(): ?string
+    {
+        return $this->isoPath;
     }
 }
