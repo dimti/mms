@@ -1,0 +1,14 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table evg_teamdev_developers'
+    - builder_table_create_evg_teamdev_developers.php
+1.0.3:
+    - 'Created table evg_teamdev_sysadmins'
+    - builder_table_create_evg_teamdev_sysadmins.php
+1.0.4:
+    - 'Created table evg_teamdev_teams'
+    - builder_table_create_evg_teamdev_teams.php
+1.0.5:
+    - 'Created table evg_teamdev_developer_teams'
+    - builder_table_create_evg_teamdev_developer_teams.php

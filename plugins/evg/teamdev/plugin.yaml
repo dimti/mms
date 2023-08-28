@@ -1,0 +1,6 @@
+plugin:
+    name: 'evg.teamdev::lang.plugin.name'
+    description: 'evg.teamdev::lang.plugin.description'
+    author: Evg
+    icon: wn-icon-group
+    replaces: {  }
