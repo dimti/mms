@@ -1,0 +1,67 @@
+#!/bin/bash
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+export LANG=en_US.UTF-8
+
+showUnnecessaryBranches() {
+  cd $1
+
+  git fetch origin --prune
+
+  LOCAL_BRANCHES_IN_DEVELOP=( $(git branch --merged develop --format "%(refname:short)") )
+
+  LOCAL_BRANCHES_WITHOUT_UPSTREAM=( $(git branch --format "%(refname:short) %(upstream) %(upstream:track)" | grep -vE "(develop|master)" | awk '{if ($3 == "[gone]" || !$2) print $1;}') )
+
+  if [ ${#LOCAL_BRANCHES_WITHOUT_UPSTREAM[@]} -eq 0 ]; then
+    echo "Нет веток без remote"
+  else
+    LOCAL_BRANCHES_WITHOUT_UPSTREAM_AND_MERGED_INTO_DEVELOP=()
+
+    for BRANCH_WITHOUT_UPSTREAM in "${LOCAL_BRANCHES_WITHOUT_UPSTREAM[@]}"; do
+      for BRANCH_MERGED_IN_DEVELOP in "${LOCAL_BRANCHES_IN_DEVELOP[@]}"; do
+        if [ "$BRANCH_WITHOUT_UPSTREAM" == "$BRANCH_MERGED_IN_DEVELOP" ]; then
+          LOCAL_BRANCHES_WITHOUT_UPSTREAM_AND_MERGED_INTO_DEVELOP+=( "$BRANCH_WITHOUT_UPSTREAM" )
+        fi
+      done
+    done
+
+    if [ ${#LOCAL_BRANCHES_WITHOUT_UPSTREAM_AND_MERGED_INTO_DEVELOP[@]} -ne 0 ]; then
+      echo "Ветки без remote и вмерженные в develop"
+  #    echo "${LOCAL_BRANCHES_WITHOUT_UPSTREAM_AND_MERGED_INTO_DEVELOP[@]}" | tr " " "\n"
+      echo "${LOCAL_BRANCHES_WITHOUT_UPSTREAM_AND_MERGED_INTO_DEVELOP[@]}"
+    fi
+
+    LOCAL_BRANCHES_WITHOUT_UPSTREAM_AND_NOT_MERGED_INTO_DEVELOP=()
+
+    for BRANCH_WITHOUT_UPSTREAM in "${LOCAL_BRANCHES_WITHOUT_UPSTREAM[@]}"; do
+      BRANCH_IS_MERGED_INTO_DEVELOP=0
+      for BRANCH_MERGED_IN_DEVELOP in "${LOCAL_BRANCHES_IN_DEVELOP[@]}"; do
+        if [ "$BRANCH_WITHOUT_UPSTREAM" == "$BRANCH_MERGED_IN_DEVELOP" ] ; then
+          BRANCH_IS_MERGED_INTO_DEVELOP=1
+        fi
+      done
+
+      if [ $BRANCH_IS_MERGED_INTO_DEVELOP -eq 0 ]; then
+        LOCAL_BRANCHES_WITHOUT_UPSTREAM_AND_NOT_MERGED_INTO_DEVELOP+=( "$BRANCH_WITHOUT_UPSTREAM" )
+      fi
+    done
+
+    if [ ${#LOCAL_BRANCHES_WITHOUT_UPSTREAM_AND_NOT_MERGED_INTO_DEVELOP[@]} -ne 0 ]; then
+      echo "Ветки без remote, но еще не вмерженные в develop"
+  #    echo "${LOCAL_BRANCHES_WITHOUT_UPSTREAM_AND_NOT_MERGED_INTO_DEVELOP[@]}" | tr " " "\n"
+      echo "${LOCAL_BRANCHES_WITHOUT_UPSTREAM_AND_NOT_MERGED_INTO_DEVELOP[@]}"
+    fi
+  fi
+}
+
+echo "Root repository:"
+echo
+showUnnecessaryBranches $(realpath "${SCRIPT_DIR}/../../")
+
+echo
+
+#echo "Winter Builder Plugin repository:"
+#echo
+#showUnnecessaryBranches $(realpath "${SCRIPT_DIR}/../../plugins/winter/builder")
+#
+#echo
