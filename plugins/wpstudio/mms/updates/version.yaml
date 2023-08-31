@@ -63,6 +63,3 @@
 1.0.22:
     - '+ replication into table wpstudio_mms_containers'
     - builder_table_update_wpstudio_mms_containers_5.php
-2.0.0:
-    - '+ autobuild lxc database structure'
-    - migration200.php
