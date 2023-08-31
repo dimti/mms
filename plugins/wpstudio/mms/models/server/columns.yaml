@@ -12,15 +12,18 @@ columns:
         type: text
     serverType:
         label: Тип
-        relation: serverType
+        type: number
         select: name
+        relation: serverType
     main_ip_address:
         label: main_ip_address
         type: text
         searchable: true
     cluster:
-        relation: cluster
+        label: cluster
+        type: number
         select: hostname
+        relation: cluster
     additional_ip_addresses:
         label: additional_ip_addresses
         type: text
@@ -36,3 +39,7 @@ columns:
     sort_order:
         label: Order
         type: number
+    is_main_server:
+        label: is_main_server
+        type: switch
+        default: 'null'

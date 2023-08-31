@@ -18,9 +18,16 @@ fields:
         type: text
     additional_ip_addresses:
         label: 'Additional ip addresses'
+        prompt: 'Добавить новый пункт'
+        style: default
         span: auto
         type: repeater
-        form: {  }
+        form:
+            fields:
+                is_main_server:
+                    label: 'Is main server'
+                    span: auto
+                    type: checkbox
     description:
         label: Description
         span: auto
@@ -36,7 +43,7 @@ fields:
         type: partial
         span: auto
     sysadmins:
-        label: Администраторы сервера
+        label: 'Администраторы сервера'
         type: partial
         span: auto
     cluster_node_status:
@@ -151,7 +158,7 @@ fields:
         type: jacob_logbook_log
         limitPerPage: 10
         startPage: 1
-        showLogRelations:
-        showSoftDeleteRelations:
+        showLogRelations: null
+        showSoftDeleteRelations: null
         showUndoChangesButton: false
         refreshFormAfterUndo: false
