@@ -10,6 +10,10 @@ columns:
     label: Назначение
     relation: destinationRole
     select: name
+  current_mem_usage:
+    label: Ram
+    type: partial
+    sortable: false
   networkType:
     label: Сеть
     relation: networkType

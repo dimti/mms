@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9c9a4a0f9a7a5b11cb577cf6317ca95b",
+    "content-hash": "31847095957260e3f1b0c5929cf8391f",
     "packages": [
         {
             "name": "assetic/framework",
@@ -240,6 +240,63 @@
                 "source": "https://github.com/barryvdh/ReflectionDocBlock/tree/v2.1.0"
             },
             "time": "2022-10-31T15:35:43+00:00"
+        },
+        {
+            "name": "becker/conversion",
+            "version": "dev-stable",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dimti/conversion.git",
+                "reference": "3600d1e6b08ffe642743378d354ee557db71a1d0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dimti/conversion/zipball/3600d1e6b08ffe642743378d354ee557db71a1d0",
+                "reference": "3600d1e6b08ffe642743378d354ee557db71a1d0",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1|^8.1"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Becker\\Conversion\\ConversionServiceProvider"
+                    ],
+                    "aliases": {
+                        "Conversion": "Becker\\Conversion\\Facades\\Conversion"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Becker\\Conversion\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Abhimanyu Sharma",
+                    "email": "abhimanyusharma003@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Laravel Unit Conversion",
+            "homepage": "https://github.com/becker/conversion",
+            "keywords": [
+                "conversion",
+                "laravel",
+                "measurements",
+                "unit"
+            ],
+            "support": {
+                "source": "https://github.com/dimti/conversion/tree/stable"
+            },
+            "time": "2023-08-31T08:52:55+00:00"
         },
         {
             "name": "brick/math",
@@ -9485,7 +9542,8 @@
         "winter/wn-builder-plugin": 20,
         "flynsarmy/wn-idehelper-plugin": 20,
         "thegr8dev/iseed": 20,
-        "jacob/logbook-plugin": 20
+        "jacob/logbook-plugin": 20,
+        "becker/conversion": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
