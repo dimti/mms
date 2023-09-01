@@ -12,3 +12,9 @@
 1.0.5:
     - 'Created table evg_teamdev_developer_teams'
     - builder_table_create_evg_teamdev_developer_teams.php
+1.0.6:
+    - 'Updated table evg_teamdev_developer_teams'
+    - builder_table_update_evg_teamdev_developer_team.php
+1.0.7:
+    - 'Drop table evg_teamdev_sysadmins'
+    - builder_table_delete_evg_teamdev_sysadmins.php

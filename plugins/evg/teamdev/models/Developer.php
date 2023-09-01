@@ -3,6 +3,7 @@
 namespace Evg\Teamdev\Models;
 
 use Model;
+use Wpstudio\Mms\Models\Sysadmin;
 
 /**
  * Model
@@ -34,6 +35,7 @@ class Developer extends Model
             'table'           => 'evg_teamdev_developer_teams',
             'foreignPivotKey' => 'developer_id',
             'relatedPivotKey' => 'team_id',
+            'timestamps'      => true,
         ]
     ];
 
