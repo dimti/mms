@@ -1,0 +1,10 @@
+name: Developers
+form: $/evg/teamdev/models/developer/fields.yaml
+modelClass: Evg\Teamdev\Models\Developer
+defaultRedirect: evg/teamdev/developers
+create:
+    redirect: 'evg/teamdev/developers/update/:id'
+    redirectClose: evg/teamdev/developers
+update:
+    redirect: evg/teamdev/developers
+    redirectClose: evg/teamdev/developers

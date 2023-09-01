@@ -32,7 +32,7 @@ class Developer extends Model
     public $belongsToMany = [
         'teams' => [
             Team::class,
-            'table'           => 'evg_teamdev_developer_teams',
+            'table'           => 'evg_teamdev_developer_team',
             'foreignPivotKey' => 'developer_id',
             'relatedPivotKey' => 'team_id',
             'timestamps'      => true,

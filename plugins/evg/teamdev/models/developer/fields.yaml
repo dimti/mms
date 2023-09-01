@@ -1,0 +1,10 @@
+fields:
+    name:
+        label: Name
+        span: auto
+        type: text
+    dropdown1:
+        label: 'Раскрывающийся список'
+        showSearch: true
+        span: auto
+        type: dropdown

@@ -1,0 +1,4 @@
+title: Developers
+modelClass: Evg\Teamdev\Models\Developer
+toolbar:
+    buttons: reorder_toolbar
