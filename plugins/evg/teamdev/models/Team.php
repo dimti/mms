@@ -27,7 +27,7 @@ class Team extends Model
             'table'           => 'evg_teamdev_developer_team',
             'foreignPivotKey' => 'team_id',
             'relatedPivotKey' => 'developer_id',
-            'timestamps'      => true,
+//            'timestamps'      => true,
         ]
     ];
 
@@ -36,4 +36,9 @@ class Team extends Model
      */
     public $rules = [
     ];
+    
+    /**
+     * @var array Attribute names to encode and decode using JSON.
+     */
+    public $jsonable = [];
 }

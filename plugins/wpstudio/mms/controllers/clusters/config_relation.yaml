@@ -5,11 +5,11 @@
 servers:
     label: Серверы
     view:
-        list: _relation_servers_view_list.yaml
+        list: _relation_developers_view_list.yaml
         showSearch: true
         toolbarButtons: add|unlink
     manage:
-        list: _relation_servers_manage_list.yaml
+        list: _relation_developers_manage_list.yaml
         showSearch: true
 sysadmins:
     label: Администраторы

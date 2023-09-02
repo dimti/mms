@@ -3,3 +3,7 @@ fields:
         label: Title
         span: auto
         type: text
+
+    developers:
+        label: Developer
+        type: partial

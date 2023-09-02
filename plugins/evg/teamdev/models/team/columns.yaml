@@ -2,6 +2,7 @@ columns:
     id:
         label: id
         type: number
+        searchable: true
     title:
         label: title
         type: text
@@ -14,3 +15,8 @@ columns:
     deleted_at:
         label: deleted_at
         type: datetime
+    developer:
+        label: developer
+        type: text
+        select: name
+        relation: developers

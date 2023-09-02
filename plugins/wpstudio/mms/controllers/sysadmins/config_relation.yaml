@@ -20,3 +20,12 @@ servers:
     manage:
         list: _relation_servers_manage_list.yaml
         showSearch: true
+developer:
+    label: Developer
+    view:
+        list: _relation_developer_view_list.yaml
+        showSearch: true
+        toolbarButtons: add|unlink
+    manage:
+        form: $/wpstudio/mms/models/sysadmin/fields_simple.yaml
+        showSearch: true
