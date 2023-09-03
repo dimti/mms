@@ -64,5 +64,5 @@
     - '+ replication into table wpstudio_mms_containers'
     - builder_table_update_wpstudio_mms_containers_5.php
 1.0.23:
-    - 'Updated table wpstudio_mms_sysadmins'
+    - '+ developer_id into table wpstudio_mms_sysadmins'
     - builder_table_update_wpstudio_mms_sysadmins.php
