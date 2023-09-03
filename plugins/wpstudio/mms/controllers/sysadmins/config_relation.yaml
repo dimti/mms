@@ -27,5 +27,5 @@ developer:
         showSearch: true
         toolbarButtons: add|unlink
     manage:
-        form: $/wpstudio/mms/models/sysadmin/fields_simple.yaml
+        form: _relation_developer_manage_list.yaml
         showSearch: true

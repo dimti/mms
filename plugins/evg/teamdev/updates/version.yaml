@@ -18,3 +18,6 @@
 1.0.7:
     - 'Drop table evg_teamdev_sysadmins'
     - builder_table_delete_evg_teamdev_sysadmins.php
+1.0.8:
+    - 'Updated table evg_teamdev_developer_team'
+    - builder_table_update_evg_teamdev_developer_team_2.php

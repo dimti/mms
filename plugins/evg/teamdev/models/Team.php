@@ -27,7 +27,7 @@ class Team extends Model
             'table'           => 'evg_teamdev_developer_team',
             'foreignPivotKey' => 'team_id',
             'relatedPivotKey' => 'developer_id',
-//            'timestamps'      => true,
+            'timestamps'      => true,
         ]
     ];
 

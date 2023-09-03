@@ -29,5 +29,5 @@ fields:
 
     developer:
         label: Developer
-        type: partial
+        type: relation
 
