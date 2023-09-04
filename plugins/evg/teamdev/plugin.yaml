@@ -4,3 +4,17 @@ plugin:
     author: Evg
     icon: wn-icon-group
     replaces: {  }
+navigation:
+    main-menu-item:
+        label: 'Team dev'
+        url: evg/teamdev/teams
+        icon: icon-group
+        sideMenu:
+            side-menu-item:
+                label: Team
+                url: evg/teamdev/teams
+                icon: icon-users
+            side-menu-item2:
+                label: Dev
+                url: evg/teamdev/developers
+                icon: icon-street-view

@@ -13,11 +13,11 @@
     - 'Created table evg_teamdev_developer_teams'
     - builder_table_create_evg_teamdev_developer_teams.php
 1.0.6:
-    - 'Updated table evg_teamdev_developer_teams'
+    - '- delete date&softDelete into table evg_teamdev_developer_team'
     - builder_table_update_evg_teamdev_developer_team.php
 1.0.7:
     - 'Drop table evg_teamdev_sysadmins'
     - builder_table_delete_evg_teamdev_sysadmins.php
 1.0.8:
-    - 'Updated table evg_teamdev_developer_team'
+    - '* date into table evg_teamdev_developer_team'
     - builder_table_update_evg_teamdev_developer_team_2.php
