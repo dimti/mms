@@ -63,3 +63,6 @@
 1.0.22:
     - '+ replication into table wpstudio_mms_containers'
     - builder_table_update_wpstudio_mms_containers_5.php
+1.0.23:
+    - '+ is_main_server into table wpstudio_mms_servers'
+    - builder_table_update_wpstudio_mms_servers_4.php

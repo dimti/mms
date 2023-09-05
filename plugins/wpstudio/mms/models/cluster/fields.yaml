@@ -82,7 +82,7 @@ fields:
         type: jacob_logbook_log
         limitPerPage: 10
         startPage: 1
-        showLogRelations:
-        showSoftDeleteRelations:
+        showLogRelations: null
+        showSoftDeleteRelations: null
         showUndoChangesButton: false
         refreshFormAfterUndo: false

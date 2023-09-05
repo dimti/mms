@@ -22,12 +22,11 @@ fields:
         style: default
         span: auto
         type: repeater
-        form:
-            fields:
-                is_main_server:
-                    label: 'Is main server'
-                    span: auto
-                    type: checkbox
+        form: {  }
+    is_main_server:
+        label: 'Is main server'
+        span: auto
+        type: checkbox
     description:
         label: Description
         span: auto
