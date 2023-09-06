@@ -3,6 +3,8 @@
 use Backend\Classes\Controller;
 use BackendMenu;
 use Wpstudio\Mms\Controllers\Clusters\Handlers\UpdateContainers;
+use Wpstudio\Mms\Controllers\Clusters\Handlers\UpdateMainServer;
+use Wpstudio\Mms\Models\Server;
 
 class Clusters extends Controller
 {
@@ -12,6 +14,7 @@ class Clusters extends Controller
         'Backend\Behaviors\ReorderController',
         'Backend\Behaviors\RelationController',
         UpdateContainers::class,
+        UpdateMainServer::class,
     ];
 
     public $listConfig = 'config_list.yaml';
@@ -24,5 +27,4 @@ class Clusters extends Controller
         parent::__construct();
         BackendMenu::setContext('Wpstudio.Mms', 'main-menu-item', 'mms-clusters');
     }
-
 }

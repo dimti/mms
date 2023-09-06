@@ -17,5 +17,8 @@ columns:
   main_ip_address:
     label: main_ip_address
     type: text
+  is_main_server:
+    label: is_main_server
+    type: number
   url_server:
     type: partial
