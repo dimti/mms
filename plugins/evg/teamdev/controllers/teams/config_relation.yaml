@@ -1,0 +1,13 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+developers:
+    label: Developers
+    view:
+        list: _relation_developers_view_list.yaml
+        showSearch: true
+        toolbarButtons: add|unlink
+    manage:
+        list: _relation_developers_manage_list.yaml
+        showSearch: true

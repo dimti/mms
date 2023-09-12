@@ -1,0 +1,4 @@
+title: Teams
+modelClass: Evg\Teamdev\Models\Team
+toolbar:
+    buttons: reorder_toolbar

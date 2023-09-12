@@ -9,7 +9,7 @@ use Wpstudio\Mms\Classes\Helpers\SshHelper;
 
 class Cli
 {
-    const CGROUPS_ROOT_UID = 10000;
+    const CGROUPS_ROOT_UID = 100000;
 
     public Connection $sshConnection;
 

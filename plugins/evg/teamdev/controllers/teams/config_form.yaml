@@ -1,0 +1,10 @@
+name: Teams
+form: $/evg/teamdev/models/team/fields.yaml
+modelClass: Evg\Teamdev\Models\Team
+defaultRedirect: evg/teamdev/teams
+create:
+    redirect: 'evg/teamdev/teams/update/:id'
+    redirectClose: evg/teamdev/teams
+update:
+    redirect: evg/teamdev/teams
+    redirectClose: evg/teamdev/teams

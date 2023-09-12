@@ -26,3 +26,8 @@ fields:
         label: Серверы
         type: partial
         span: left
+
+    developer:
+        label: Developer
+        type: relation
+

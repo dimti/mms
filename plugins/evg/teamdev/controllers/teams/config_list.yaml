@@ -1,0 +1,12 @@
+list: $/evg/teamdev/models/team/columns.yaml
+modelClass: Evg\Teamdev\Models\Team
+title: Teams
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'evg/teamdev/teams/update/:id'

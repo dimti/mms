@@ -201,7 +201,7 @@ class SetupHetznerProxmoxServer extends ExtensionBase
 
     public function hasIsoPath(): bool
     {
-        return !is_null($this->isoPath);
+        return !is_null($this->isoPath) && $this->isoPath;
     }
 
     /**
