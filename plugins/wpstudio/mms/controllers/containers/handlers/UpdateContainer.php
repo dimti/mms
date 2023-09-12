@@ -1,9 +1,10 @@
 <?php namespace Wpstudio\Mms\Controllers\Containers\Handlers;
 
+use Winter\Storm\Extension\ExtensionBase;
 use Wpstudio\Mms\Classes\Traits\SiteInteractions;
 use Wpstudio\Mms\Models;
 
-class UpdateContainer extends \Winter\Storm\Extension\ExtensionBase
+class UpdateContainer extends ExtensionBase
 {
     use SiteInteractions;
 

@@ -9,6 +9,7 @@ use Wpstudio\Mms\Classes\LinuxContainer;
 use Wpstudio\Mms\Classes\Nginx\NginxMasterProxy;
 use Wpstudio\Mms\Classes\Nginx\NginxSite;
 use Wpstudio\Mms\Classes\ProxmoxServer;
+use Wpstudio\Mms\Controllers\Servers\Handlers\GetAllCurrentMemUsage;
 
 class Servers extends Controller
 {
@@ -17,6 +18,7 @@ class Servers extends Controller
         'Backend\Behaviors\FormController',
         'Backend\Behaviors\ReorderController',
         'Backend\Behaviors\RelationController',
+        GetAllCurrentMemUsage::class,
     ];
 
     public $listConfig = 'config_list.yaml';
