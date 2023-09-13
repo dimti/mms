@@ -19,6 +19,4 @@ columns:
     type: text
   is_main_server:
     label: is_main_server
-    type: partial
-    path: $/wpstudio/mms/controllers/clusters/_check_main_server.htm
-
+    type: number
