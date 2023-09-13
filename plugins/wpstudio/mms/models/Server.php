@@ -1,6 +1,8 @@
 <?php namespace Wpstudio\Mms\Models;
 
 use Illuminate\Support\Collection;
+use Illuminate\Support\MessageBag;
+use Illuminate\Validation\ValidationException;
 use Jacob\Logbook\Traits\LogChanges;
 use Model;
 use Winter\Storm\Database\Relations\BelongsTo;
@@ -133,6 +135,25 @@ class Server extends Model
         }
         else {
             return Server::lists('code', 'id');
+        }
+    }
+
+    public function beforeSave()
+    {
+        if ($this->is_main_server && $this->isDirty('hostname')){
+            $cluster = $this->cluster;
+//            dd($cluster);
+            if ($cluster){
+                $cluster->name = parse_url($this->hostname, PHP_URL_HOST);
+                $cluster->save();
+            }
+        }
+
+        // Checking hostname before saving
+        if ($this->is_main_server && empty($this->hostname)){
+            throw ValidationException::withMessages([
+                'hostname' => 'Главный сервер должен иметь hostname.',
+            ]);
         }
     }
 }
