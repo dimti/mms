@@ -64,8 +64,11 @@
     - '+ replication into table wpstudio_mms_containers'
     - builder_table_update_wpstudio_mms_containers_5.php
 1.0.23:
+    - '+ developer_id into table wpstudio_mms_sysadmins'
+    - builder_table_update_wpstudio_mms_sysadmins.php
+1.0.24:
     - '+ is_main_server into table wpstudio_mms_servers'
     - builder_table_update_wpstudio_mms_servers_4.php
-1.0.24:
+1.0.25:
     - '* rename hostname on name into table wpstudio_mms_clusters'
     - builder_table_update_wpstudio_mms_clusters_4.php

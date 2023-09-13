@@ -24,9 +24,10 @@ class Team extends Model
     public $belongsToMany = [
         'developers' => [
             Developer::class,
-            'table'           => 'evg_teamdev_developer_teams',
+            'table'           => 'evg_teamdev_developer_team',
             'foreignPivotKey' => 'team_id',
             'relatedPivotKey' => 'developer_id',
+            'timestamps'      => true,
         ]
     ];
 
@@ -35,4 +36,9 @@ class Team extends Model
      */
     public $rules = [
     ];
+    
+    /**
+     * @var array Attribute names to encode and decode using JSON.
+     */
+    public $jsonable = [];
 }

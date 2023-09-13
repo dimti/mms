@@ -16,6 +16,8 @@ class DeveloperTeam extends Model
 
     protected $dates = ['deleted_at'];
 
+    public $timestamps = true;
+
     /**
      * @var string The database table used by the model.
      */

@@ -270,6 +270,7 @@ return [
         \Collective\Remote\RemoteServiceProvider::class,
         \RichardStyles\EloquentEncryption\EloquentEncryptionServiceProvider::class,
         \Joshuapack\Cloudflare\CloudflareServiceProvider::class,
+        Becker\Conversion\ConversionServiceProvider::class
     ]),
 
     /*
@@ -305,5 +306,6 @@ return [
 
     'aliases' => array_merge(include(base_path('modules/system/aliases.php')), [
         // 'Str' => 'Illuminate\Support\Str', // Example
+        'Conversion'  => Becker\Conversion\Facades\Conversion::class,
     ]),
 ];

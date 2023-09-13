@@ -10,6 +10,7 @@ use Winter\Storm\Database\Traits\Validation;
 use Wpstudio\Mms\Classes\Exceptions;
 use Wpstudio\Mms\Classes\LinuxContainer;
 use Wpstudio\Mms\Classes\Nginx\NginxSite;
+use Wpstudio\Mms\Classes\Pve\LxcStatus;
 
 /**
  * @property DestinationRole $destinationRole
@@ -24,6 +25,11 @@ use Wpstudio\Mms\Classes\Nginx\NginxSite;
  * @property array $role_payload = [
  *     'nginx_site_code' => 'tw',
  * ]
+ *
+ * @property string $lxc_status = [
+ *     'mem' => 100089856,
+ * ]
+ * @see LxcStatus
  */
 class Container extends Model
 {

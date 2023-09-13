@@ -1,5 +1,6 @@
 <?php namespace Wpstudio\Mms\Models;
 
+use Evg\Teamdev\Models\Developer;
 use Model;
 use Winter\Storm\Database\Traits\SoftDelete;
 use Winter\Storm\Database\Traits\Validation;
@@ -40,6 +41,14 @@ class Sysadmin extends Model
             Server::class,
             'table' => 'wpstudio_mms_server_sysadmin',
         ],
+    ];
+
+    public $belongsTo = [
+        'developer' => [
+            Developer::class,
+            'foreignKey' => 'id',
+            'ownerKey'   => 'developer_id',
+        ]
     ];
 
     public static function getSysadminByNickname(string $nickName): Sysadmin

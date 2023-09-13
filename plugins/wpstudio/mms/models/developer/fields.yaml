@@ -1,0 +1,6 @@
+fields:
+    name:
+        label: Name
+        span: auto
+        placeholder: ''
+        type: text
