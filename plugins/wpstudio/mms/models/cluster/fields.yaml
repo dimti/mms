@@ -1,6 +1,6 @@
 fields:
-    hostname:
-        label: Hostname
+    name:
+        label: Name
         span: auto
         type: text
     username:
@@ -36,8 +36,8 @@ fields:
         type: textarea
     servers:
         label: Серверы
-        type: partial
         span: auto
+        type: partial
     sysadmins:
         label: Администраторы
         type: partial

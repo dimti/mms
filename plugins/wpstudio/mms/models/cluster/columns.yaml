@@ -2,8 +2,8 @@ columns:
     id:
         label: id
         type: number
-    hostname:
-        label: hostname
+    name:
+        label: name
         type: text
         searchable: true
     username:
