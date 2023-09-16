@@ -2,8 +2,8 @@ columns:
     id:
         label: id
         type: number
-    name:
-        label: name
+    code:
+        label: code
         type: text
         searchable: true
     username:
