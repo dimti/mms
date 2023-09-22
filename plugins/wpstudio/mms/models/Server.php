@@ -132,28 +132,41 @@ class Server extends Model
             $clusterId = is_array($scopes['cluster']->value) ? $scopes['cluster']->value : [$scopes['cluster']->value];
 
             return Server::whereHas('cluster', fn($query) => $query->whereIn('hostname', $clusterId))->lists('code', 'id');
-        }
-        else {
+        } else {
             return Server::lists('code', 'id');
         }
     }
 
     public function beforeSave()
     {
-        if ($this->is_main_server && $this->isDirty('hostname')){
+        if ($this->is_main_server && $this->isDirty('hostname')) {
             $cluster = $this->cluster;
-//            dd($cluster);
-            if ($cluster){
-                $cluster->name = parse_url($this->hostname, PHP_URL_HOST);
+
+            if ($cluster) {
+                $cluster->code = parse_url($this->hostname, PHP_URL_HOST);
                 $cluster->save();
             }
         }
 
-        // Checking hostname before saving
-        if ($this->is_main_server && empty($this->hostname)){
-            throw ValidationException::withMessages([
+        if ($this->is_main_server && empty($this->hostname)) {
+            throw new \ValidationException([
                 'hostname' => 'Главный сервер должен иметь hostname.',
             ]);
         }
+
+        $existingServer = Server::where('cluster_id', $this->cluster_id)
+            ->where('is_main_server', $this->is_main_server)
+            ->where('id', '<>', $this->id)
+            ->first();
+
+        if (!$this->is_main_server) {
+            $this->is_main_server = null;
+        }
+
+//        if ($this->is_main_server == 1) {
+//                throw new \ValidationException([
+//                    'cluster_id' => 'Нельзя выбрать сервер назначенный главным другому кластеру'
+//                ]);
+//        }
     }
 }

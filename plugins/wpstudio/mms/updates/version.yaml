@@ -72,3 +72,6 @@
 1.0.25:
     - '* rename hostname on name into table wpstudio_mms_clusters'
     - builder_table_update_wpstudio_mms_clusters_4.php
+1.0.26:
+    - '* rename name on code into table wpstudio_mms_clusters'
+    - builder_table_update_wpstudio_mms_clusters_5.php

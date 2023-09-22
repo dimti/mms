@@ -20,3 +20,5 @@ columns:
   is_main_server:
     label: is_main_server
     type: number
+  url_server:
+    type: partial

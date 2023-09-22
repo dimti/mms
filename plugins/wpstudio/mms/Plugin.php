@@ -2,6 +2,8 @@
 
 use System\Classes\PluginBase;
 use Winter\Storm\Support\Facades\Event;
+use Wpstudio\Mms\Controllers\Clusters\Handlers\UpdateMainServer;
+use Wpstudio\Mms\Models\Cluster;
 use Wpstudio\Mms\Models\Server;
 
 class Plugin extends PluginBase
@@ -12,6 +14,7 @@ class Plugin extends PluginBase
 
         Event::listen('model.beforeSave', function ($model){
             if ($model instanceof Server){
+
                 $model->beforeSave();
             }
         });
