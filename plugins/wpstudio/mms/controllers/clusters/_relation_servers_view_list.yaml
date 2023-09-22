@@ -21,6 +21,3 @@ columns:
     label: 'Is main server'
     type: partial
     path: $/wpstudio/mms/controllers/clusters/_check_main_server.htm
-
-  # url_server:
-  #   type: partial

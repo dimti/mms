@@ -7,13 +7,11 @@ use Wpstudio\Mms\Models\Cluster;
 
 class ServerChangedEvent
 {
-    public function handle($server)
+    public function handle($server, $clusterId, $isMainServer)
     {
-        // Server domain name without protocol and slashes
         $domain = parse_url($server->hostname, PHP_URL_HOST);
 
-        // The cluster this server belongs to
-        $cluster = $server->cluster;
+        $cluster = Cluster::find($clusterId);
 
         if ($cluster) {
             if (empty($server->hostname)){
@@ -21,8 +19,11 @@ class ServerChangedEvent
                 return;
             }
 
-            // Setting the server domain name as the cluster codename
-            $cluster->name = $domain;
+            if (!$isMainServer){
+                $cluster->code = '';
+            } else {
+                $cluster->code = $domain;
+            }
 
             $cluster->save();
         }

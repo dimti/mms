@@ -31,6 +31,8 @@ class Cluster extends Model
 
     protected $dates = ['deleted_at'];
 
+    protected $fillable = ['code'];
+
     /**
      * @var string The database table used by the model.
      */
