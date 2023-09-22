@@ -1,0 +1,28 @@
+columns:
+    id:
+        label: id
+        type: number
+    name:
+        label: name
+        type: text
+        searchable: true
+    api_key:
+        label: api_key
+        type: text
+    provider:
+        label: provider
+        type: text
+        searchable: true
+    region:
+        label: region
+        type: text
+        searchable: true
+    type_id:
+        label: type_id
+        type: number
+    created_at:
+        label: created_at
+        type: datetime
+    updated_at:
+        label: updated_at
+        type: datetime

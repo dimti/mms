@@ -1,0 +1,17 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table wpstudio_cloud_vps'
+    - builder_table_create_wpstudio_cloud_vps.php
+1.0.3:
+    - 'Created table wpstudio_cloud_platforms'
+    - builder_table_create_wpstudio_cloud_platforms.php
+1.0.4:
+    - 'Created table wpstudio_cloud_platform_type'
+    - builder_table_create_wpstudio_cloud_platform_types.php
+1.0.5:
+    - 'Create foreign keys'
+    - migrationforeigns.php
+1.0.6:
+    - 'Create seeders'
+    - seeder1.php

@@ -1,0 +1,23 @@
+fields:
+    name:
+        label: name
+        span: auto
+        type: text
+    api_key:
+        label: api_key
+        span: auto
+        type: password
+    provider:
+        label: provider
+        span: auto
+        type: text
+    region:
+        label: region
+        span: auto
+        type: text
+    type_id:
+        label: type_id
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        type: relation

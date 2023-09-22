@@ -1,0 +1,23 @@
+fields:
+    vps_id:
+        label: vps_id
+        span: auto
+        type: text
+    hostname:
+        label: hostname
+        span: auto
+        type: text
+    ip_address:
+        label: ip_address
+        span: auto
+        type: text
+    status:
+        label: status
+        span: left
+        type: text
+    platform_id:
+        label: platform_id
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        type: relation

@@ -1,0 +1,6 @@
+plugin:
+    name: 'wpstudio.cloud::lang.plugin.name'
+    description: 'wpstudio.cloud::lang.plugin.description'
+    author: 'Андрей Шарисламов'
+    icon: wn-icon-wrench
+    replaces: {  }
