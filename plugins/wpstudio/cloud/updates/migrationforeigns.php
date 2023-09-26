@@ -14,10 +14,10 @@ class MigrationForeigns extends Migration
                 ->on('wpstudio_cloud_platforms');
          });
 
-         Schema::table('wpstudio_cloud_platform_types', function (Blueprint $table) {
-            $table->foreign(['platform_id'])
+         Schema::table('wpstudio_cloud_platforms', function (Blueprint $table) {
+            $table->foreign(['platform_type_id'])
                 ->references(['id'])
-                ->on('wpstudio_cloud_platforms');
+                ->on('wpstudio_cloud_platform_types');
          });
     }
 
@@ -28,7 +28,7 @@ class MigrationForeigns extends Migration
         });
 
         Schema::table('wpstudio_cloud_platforms', function (Blueprint $table) {
-            $table->dropForeign(['type_id']);
+            $table->dropForeign(['platform_type_id']);
         });
     }
 }

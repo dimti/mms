@@ -15,8 +15,8 @@ fields:
         label: region
         span: auto
         type: text
-    type_id:
-        label: type_id
+    platformType:
+        label: 'Platform type id'
         nameFrom: name
         descriptionFrom: description
         span: auto

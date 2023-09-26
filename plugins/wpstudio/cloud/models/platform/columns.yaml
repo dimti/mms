@@ -17,8 +17,8 @@ columns:
         label: region
         type: text
         searchable: true
-    type_id:
-        label: type_id
+    platform_type_id:
+        label: platform_type_id
         type: number
     created_at:
         label: created_at

@@ -1,0 +1,12 @@
+list: $/wpstudio/cloud/models/platform/columns.yaml
+modelClass: wpstudio\cloud\Models\Platform
+title: Platforms
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'wpstudio/cloud/platforms/update/:id'

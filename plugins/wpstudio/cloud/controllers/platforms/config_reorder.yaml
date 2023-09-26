@@ -1,0 +1,4 @@
+title: Platforms
+modelClass: wpstudio\cloud\Models\Platform
+toolbar:
+    buttons: reorder_toolbar

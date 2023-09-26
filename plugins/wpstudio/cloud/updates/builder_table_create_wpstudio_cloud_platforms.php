@@ -12,10 +12,10 @@ class BuilderTableCreateWpstudioCloudPlatforms2 extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id')->unsigned();
             $table->string('name');
-            $table->string('api_key');
+            $table->encrypted('api_key');
             $table->string('provider');
             $table->string('region');
-            $table->integer('type_id')->unsigned();
+            $table->integer('platform_type_id')->unsigned();
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
         });

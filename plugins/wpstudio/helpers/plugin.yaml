@@ -1,0 +1,6 @@
+plugin:
+    name: 'wpstudio.helpers::lang.plugin.name'
+    description: 'wpstudio.helpers::lang.plugin.description'
+    author: 'Андрей Шарисламов'
+    icon: wn-icon-question-circle
+    replaces: {  }

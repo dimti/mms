@@ -1,0 +1,10 @@
+name: Vps
+form: $/wpstudio/cloud/models/vps/fields.yaml
+modelClass: wpstudio\cloud\Models\Vps
+defaultRedirect: wpstudio/cloud/vps
+create:
+    redirect: 'wpstudio/cloud/vps/update/:id'
+    redirectClose: wpstudio/cloud/vps
+update:
+    redirect: wpstudio/cloud/vps
+    redirectClose: wpstudio/cloud/vps

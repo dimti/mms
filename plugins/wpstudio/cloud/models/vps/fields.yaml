@@ -15,8 +15,8 @@ fields:
         label: status
         span: left
         type: text
-    platform_id:
-        label: platform_id
+    platformId:
+        label: 'Platform id'
         nameFrom: name
         descriptionFrom: description
         span: auto

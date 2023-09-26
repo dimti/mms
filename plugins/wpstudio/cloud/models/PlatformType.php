@@ -13,7 +13,7 @@ class PlatformType extends Model
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'wpstudio_cloud_platform_type';
+    public $table = 'wpstudio_cloud_platform_types';
 
     /**
      * @var array Validation rules

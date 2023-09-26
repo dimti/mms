@@ -2,5 +2,23 @@ plugin:
     name: 'wpstudio.cloud::lang.plugin.name'
     description: 'wpstudio.cloud::lang.plugin.description'
     author: 'Андрей Шарисламов'
-    icon: wn-icon-wrench
+    icon: wn-icon-cloud
     replaces: {  }
+navigation:
+    main-menu-item:
+        label: 'wpstudio.cloud::lang.plugin.name'
+        url: wpstudio/cloud/vps
+        icon: icon-cloud
+        sideMenu:
+            cloud-vps:
+                label: vps
+                url: wpstudio/cloud/vps
+                icon: icon-server
+            cloud-platforms:
+                label: platforms
+                url: wpstudio/cloud/platforms
+                icon: icon-square
+            cloud-platforms-type:
+                label: 'Platforms Types'
+                url: wpstudio/cloud/platformtypes
+                icon: icon-sitemap

@@ -14,7 +14,7 @@ class BuilderTableCreateWpstudioCloudVps extends Migration
             $table->string('vps_id');
             $table->string('hostname');
             $table->string('ip_address');
-            $table->string('status');
+            $table->text('status');
             $table->integer('platform_id')->unsigned();
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();

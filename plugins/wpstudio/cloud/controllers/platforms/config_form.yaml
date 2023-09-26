@@ -1,0 +1,10 @@
+name: Platforms
+form: $/wpstudio/cloud/models/platform/fields.yaml
+modelClass: wpstudio\cloud\Models\Platform
+defaultRedirect: wpstudio/cloud/platforms
+create:
+    redirect: 'wpstudio/cloud/platforms/update/:id'
+    redirectClose: wpstudio/cloud/platforms
+update:
+    redirect: wpstudio/cloud/platforms
+    redirectClose: wpstudio/cloud/platforms

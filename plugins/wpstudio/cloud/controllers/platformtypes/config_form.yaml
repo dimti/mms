@@ -1,0 +1,10 @@
+name: PlatformTypes
+form: $/wpstudio/cloud/models/platformtype/fields.yaml
+modelClass: wpstudio\cloud\Models\PlatformType
+defaultRedirect: wpstudio/cloud/platformtypes
+create:
+    redirect: 'wpstudio/cloud/platformtypes/update/:id'
+    redirectClose: wpstudio/cloud/platformtypes
+update:
+    redirect: wpstudio/cloud/platformtypes
+    redirectClose: wpstudio/cloud/platformtypes

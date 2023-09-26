@@ -1,0 +1,4 @@
+title: Vps
+modelClass: wpstudio\cloud\Models\Vps
+toolbar:
+    buttons: reorder_toolbar
