@@ -6,7 +6,7 @@ fields:
     api_key:
         label: api_key
         span: auto
-        type: password
+        type: text
     provider:
         label: provider
         span: auto
@@ -21,3 +21,7 @@ fields:
         descriptionFrom: description
         span: auto
         type: relation
+    vps:
+        label: vps
+        type: partial
+        span: auto

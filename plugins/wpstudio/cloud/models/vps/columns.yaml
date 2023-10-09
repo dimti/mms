@@ -6,6 +6,14 @@ columns:
         label: vps_id
         type: text
         searchable: true
+    vps_name:
+        label: vps_name
+        type: text
+        searchable: true
+    slug:
+        label: slug
+        type: text
+        searchable: true
     hostname:
         label: hostname
         type: text
@@ -26,4 +34,7 @@ columns:
         type: datetime
     updated_at:
         label: updated_at
+        type: datetime
+    deleted_at:
+        label: deleted_at
         type: datetime

@@ -1,0 +1,13 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+vps:
+    label: VPS
+    view:
+        list: _relation_vps_manage_list.yaml
+        showSearch: true
+        toolbarButtons: refresh|remove
+    manage:
+        list: _relation_vps_manage_list.yaml
+        showSearch: true

@@ -12,12 +12,15 @@ class BuilderTableCreateWpstudioCloudVps extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id')->unsigned();
             $table->string('vps_id');
+            $table->string('vps_name');
+            $table->string('slug')->nullable();
             $table->string('hostname');
             $table->string('ip_address');
             $table->text('status');
             $table->integer('platform_id')->unsigned();
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
+            $table->timestamp('deleted_at')->nullable();
         });
     }
     

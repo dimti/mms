@@ -13,8 +13,8 @@ class BuilderTableCreateWpstudioCloudPlatforms2 extends Migration
             $table->increments('id')->unsigned();
             $table->string('name');
             $table->encrypted('api_key');
-            $table->string('provider');
-            $table->string('region');
+            $table->string('provider')->nullable();
+            $table->string('region')->nullable();
             $table->integer('platform_type_id')->unsigned();
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();

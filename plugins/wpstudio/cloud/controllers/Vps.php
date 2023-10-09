@@ -2,10 +2,16 @@
 
 use Backend\Classes\Controller;
 use BackendMenu;
+use wpstudio\cloud\controllers\vps\handlers\UpdateStatusVps;
 
 class Vps extends Controller
 {
-    public $implement = [        'Backend\Behaviors\ListController',        'Backend\Behaviors\FormController',        'Backend\Behaviors\ReorderController'    ];
+    public $implement = [
+        'Backend\Behaviors\ListController',
+        'Backend\Behaviors\FormController',
+        'Backend\Behaviors\ReorderController',
+        UpdateStatusVps::class,
+    ];
     
     public $listConfig = 'config_list.yaml';
     public $formConfig = 'config_form.yaml';

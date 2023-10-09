@@ -1,0 +1,40 @@
+columns:
+  id:
+    label: id
+    type: number
+  vps_id:
+    label: vps_id
+    type: text
+    searchable: true
+  vps_name:
+    label: vps_name
+    type: text
+    searchable: true
+  slug:
+    label: slug
+    type: text
+    searchable: true
+  hostname:
+    label: hostname
+    type: text
+    searchable: true
+  ip_address:
+    label: ip_address
+    type: text
+    searchable: true
+  status:
+    label: status
+    type: text
+    searchable: true
+  platform_id:
+    label: platform_id
+    type: number
+  created_at:
+    label: created_at
+    type: datetime
+  updated_at:
+    label: updated_at
+    type: datetime
+  deleted_at:
+    label: deleted_at
+    type: datetime

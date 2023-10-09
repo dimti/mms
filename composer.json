@@ -26,7 +26,7 @@
         "jacob/logbook-plugin": "dev-master",
         "becker/conversion": "dev-stable",
         "joshuapack/laravel-cloudflare": "^0.2.0",
-        "LTD-Beget/openapi-vps-php": "*@dev"
+        "ltd-beget/openapi-vps-php": "*@dev"
     },
     "repositories": [
         {

@@ -2,13 +2,31 @@
 namespace wpstudio\cloud\Models;
 
 use Model;
+use \Winter\Storm\Database\Traits\Validation;
+use \Winter\Storm\Database\Traits\SoftDelete;
 
 /**
  * Model
  */
 class Vps extends Model
 {
-    use \Winter\Storm\Database\Traits\Validation;
+    use Validation;
+    use SoftDelete;
+
+    /**
+     * @var string[]
+     */
+    protected $fillable = [
+        'vps_id',
+        'vps_name',
+        'slug',
+        'hostname',
+        'ip_address',
+        'status',
+        'platform_id',
+    ];
+
+    protected $dates = ['deleted_at'];
 
     /**
      * @var string
@@ -31,9 +49,9 @@ class Vps extends Model
     /**
      * @var array Attribute names to encode and decode using JSON.
      */
-    public $jsonable = ["status"];
+    public $jsonable = ['status'];
 
-    /**
-     * @var string[]
-     */
+    protected $casts = [
+        "api_key" => "encrypted",
+    ];
 }

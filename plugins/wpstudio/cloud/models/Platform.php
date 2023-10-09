@@ -13,7 +13,14 @@ class Platform extends Model
      * @var string
      */
     public $belongsTo = [
-        'platform_type' => PlatformType::class
+        'platformType' => PlatformType::class
+    ];
+
+    /**
+     * @var string[]
+     */
+    public $hasMany = [
+        'vps' => Vps::class,
     ];
 
     /**
