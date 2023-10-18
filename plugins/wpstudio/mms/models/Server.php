@@ -79,6 +79,15 @@ class Server extends Model
 
     private bool $isExistsMasterNginxProxy;
 
+    public function beforeCreate()
+    {
+        if ($this->hostname && !$this->main_ip_address) {
+            $this->main_ip_address = gethostbyname($this->hostname);
+        } else if (!$this->hostname && $this->main_ip_address) {
+            $this->hostname = gethostbyaddr($this->main_ip_address);
+        }
+    }
+
     public function getProxmoxServer(): ProxmoxServer
     {
         if (!isset($this->proxmoxServer)) {

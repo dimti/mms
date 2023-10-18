@@ -1,5 +1,6 @@
 <?php namespace Wpstudio\Mms\Controllers;
 
+use Backend\Behaviors\ListController;
 use Backend\Classes\Controller;
 use BackendMenu;
 use Winter\Storm\Database\Builder;
@@ -11,7 +12,7 @@ use Wpstudio\Mms\Controllers\Containers\Handlers\UpdateContainer;
 class Containers extends Controller
 {
     public $implement = [
-        'Backend\Behaviors\ListController',
+        ListController::class,
         'Backend\Behaviors\FormController',
         'Backend\Behaviors\ReorderController',
         'Backend\Behaviors\RelationController',
@@ -33,6 +34,11 @@ class Containers extends Controller
 
     public function listExtendQuery(Builder $query)
     {
-        $query->selectRaw('JSON_UNQUOTE(JSON_EXTRACT(lxc_status, ?)) as status', ['$.status']);
+        /**
+         * @desc Extend query only if any select columns presented in query
+         */
+        if ($query->getQuery()->columns) {
+            $query->selectRaw('JSON_UNQUOTE(JSON_EXTRACT(lxc_status, ?)) as status', ['$.status']);
+        }
     }
 }

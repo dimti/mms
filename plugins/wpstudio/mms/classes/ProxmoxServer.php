@@ -130,7 +130,15 @@ class ProxmoxServer
     {
         $this->lxcStatuses = collect();
 
-        collect($this->node->lxc()->get()['data'])->filter(fn(array $lxcStatusItem) => $lxcStatusItem['template'] != 1)->each(
+        $filteringOnlyLxcWithoutTemplates = function (array $lxcStatusItem): bool {
+            if (array_key_exists('template', $lxcStatusItem) && $lxcStatusItem['template'] == 1) {
+                return false;
+            }
+
+            return true;
+        };
+
+        collect($this->node->lxc()->get()['data'])->filter($filteringOnlyLxcWithoutTemplates)->each(
             fn(array $lxcItem) => $this->lxcStatuses->offsetSet(
                 $lxcItem['vmid'],
                 new LxcStatus($lxcItem)

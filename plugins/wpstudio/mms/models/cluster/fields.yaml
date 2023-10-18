@@ -28,13 +28,13 @@ fields:
         showSearch: true
         span: auto
         type: dropdown
-    buttons:
+    buttons@update:
         type: partial
     description:
         label: Description
         span: auto
         type: textarea
-    servers:
+    servers@update:
         label: Серверы
         type: partial
         span: auto
@@ -42,7 +42,7 @@ fields:
         label: Администраторы
         type: partial
         span: auto
-    cluster_status:
+    cluster_status@update:
         label: 'Статус кластера'
         span: auto
         type: nestedform

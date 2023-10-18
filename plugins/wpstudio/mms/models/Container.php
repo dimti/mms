@@ -74,6 +74,8 @@ class Container extends Model
 
     private NginxSite $nginxSite;
 
+    protected $deleteLogbookAfterDelete = true;
+
     /**
      * @return void
      * @throws Exceptions\MmsException

@@ -3,6 +3,7 @@ fields:
         label: Code
         span: auto
         type: text
+        commentAbove: 'Must be appropriate with proxmox node name'
     hostname:
         label: hostname
         span: auto
@@ -25,13 +26,13 @@ fields:
         label: Description
         span: auto
         type: textarea
-    buttons:
+    buttons@update:
         type: partial
     cluster:
         label: Кластер
         type: partial
         span: auto
-    containers:
+    containers@update:
         label: Контейнеры
         type: partial
         span: auto
@@ -39,7 +40,7 @@ fields:
         label: Администраторы сервера
         type: partial
         span: auto
-    cluster_node_status:
+    cluster_node_status@update:
         label: 'Статус ноды по версии кластера'
         span: left
         type: nestedform
@@ -83,7 +84,7 @@ fields:
                     span: auto
                     type: codeeditor
                     language: javascript
-    node_status:
+    node_status@update:
         label: 'Статус ноды'
         span: left
         type: nestedform

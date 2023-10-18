@@ -1,13 +1,10 @@
 columns:
-    id:
-        label: id
-        type: number
-    name:
-        label: name
-        type: text
-        searchable: true
     code:
         label: code
+        type: text
+        searchable: true
+    name:
+        label: name
         type: text
         searchable: true
     server:
@@ -28,6 +25,3 @@ columns:
     updated_at:
         label: updated_at
         type: datetime
-    sort_order:
-        label: Order
-        type: number

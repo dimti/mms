@@ -99,12 +99,6 @@ class UpdateContainers extends ExtensionBase
                 } else {
                     $server = new Models\Server;
 
-                    $server->name = sprintf(
-                        'Server %s automatic created in cluster "%s"',
-                        $serverCode,
-                        $this->proxmoxCluster->cluster->name,
-                    );
-
                     $server->code = $serverCode;
 
                     $server->main_ip_address = $this->proxmoxCluster
