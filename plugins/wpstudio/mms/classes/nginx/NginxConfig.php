@@ -1,6 +1,8 @@
 <?php namespace Wpstudio\Mms\Classes\Nginx;
 
 use Wpstudio\Mms\Classes\Cli;
+use Wpstudio\Mms\Classes\Exceptions\MmsCliFileNotFoundException;
+use Wpstudio\Mms\Classes\Exceptions\MmsFileContentException;
 use Wpstudio\Mms\Classes\Helpers\FileContentHelper;
 use Wpstudio\Mms\Classes\Exceptions;
 
@@ -8,6 +10,7 @@ class NginxConfig
 {
     const SSL_CERT_LINE_SEARCH_QUERY = 'ssl_certificate_key';
     const AUTH_LINE_SEARCH_QUERY = 'auth.d';
+    const TEMPORARY_LETSENCRYPT_SSL_KEY_PATH_PLACEHOLDER = 'tmp/domain';
 
     private NginxSite $nginxSite;
 
@@ -16,6 +19,8 @@ class NginxConfig
     private Cli $cli;
 
     private string|false $authConfigLine;
+
+    private string $sslConfigLine;
 
     public function __construct(NginxSite $nginxSite)
     {
@@ -62,13 +67,27 @@ class NginxConfig
     /**
      * @return string
      * @throws Exceptions\MmsFileContentException
+     * @throws MmsCliFileNotFoundException
      */
     public function getSslCertConfigLine(): string
     {
-        return FileContentHelper::getLineBySearchQuery(
-            $this->getConfigFileContent(),
-            self::SSL_CERT_LINE_SEARCH_QUERY,
-        );
+        if (!isset($this->sslConfigLine)) {
+            $this->sslConfigLine = FileContentHelper::getLineBySearchQuery(
+                $this->getConfigFileContent(),
+                self::SSL_CERT_LINE_SEARCH_QUERY,
+            );
+        }
+
+        return $this->sslConfigLine;
+    }
+
+    /**
+     * @throws MmsCliFileNotFoundException
+     * @throws MmsFileContentException
+     */
+    public function isTemporarySelfSignedLetsencryptSsl(): bool
+    {
+        return str_contains($this->getSslCertConfigLine(), self::TEMPORARY_LETSENCRYPT_SSL_KEY_PATH_PLACEHOLDER);
     }
 
     /**

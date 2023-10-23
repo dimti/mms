@@ -61,13 +61,19 @@ class MoveSite extends ExtensionBase
 
         $this->moveNginxConfig();
         $this->copyNginxAuth();
-        $this->moveSslDirsAndRenewalConfig();
+
+        if (!$this->nginxSite->nginxConfig->isTemporarySelfSignedLetsencryptSsl()) {
+            $this->moveSslDirsAndRenewalConfig();
+        }
 
         $this->testNginxOnDestination();
         $this->reloadNginxOnDestination();
 
         $this->removeNginxConfigOnSource();
-        $this->removeSslDirsAndRenewalConfigOnSource();
+
+        if (!$this->nginxSite->nginxConfig->isTemporarySelfSignedLetsencryptSsl()) {
+            $this->removeSslDirsAndRenewalConfigOnSource();
+        }
 
         $this->testNginxOnSource();
         $this->reloadNginxOnSource();
