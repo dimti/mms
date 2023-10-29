@@ -27,7 +27,7 @@ fields:
         form:
             fields:
                 nginx_site_code:
-                    label: Альтернативное название файла конфигурации nginx
+                    label: Альтернативное кодовое имя конфигурации nginx (без ".conf")
                     comment: По-умолчанию - название Linux-контейнера
                     type: text
                     trigger:
