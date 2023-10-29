@@ -195,17 +195,27 @@ class ProxmoxServer
         $this->linuxContainers = collect();
 
         $this->server->containers->each(
-            fn(Models\Container $container) => $this->linuxContainers->offsetSet(
-                $container->code,
-                new LinuxContainer(
-                    $container,
-                    $this,
-                    $this->getVmId($container->code),
-                    $this->lxcStatuses->get($container->code),
-                    $this->lxcConfigs->get($container->code),
-                    $this->getReplication()->has($container->code) ? $this->getReplication()->get($container->code) : collect()
-                )
-            )
+            function (Models\Container $container) {
+                try {
+                    $linuxContainer = new LinuxContainer(
+                        $container,
+                        $this,
+                        $this->getVmId($container->code),
+                        $this->lxcStatuses->get($container->code),
+                        $this->lxcConfigs->get($container->code),
+                        $this->getReplication()->has($container->code) ? $this->getReplication()->get($container->code) : collect()
+                    );
+                } catch (Exceptions\MmsLxcNotFoundException $e) {
+                    logger()->warning($e->getMessage(), $e->getTrace());
+
+                    return;
+                }
+
+                $this->linuxContainers->offsetSet(
+                    $container->code,
+                    $linuxContainer
+                );
+            }
         );
     }
 
