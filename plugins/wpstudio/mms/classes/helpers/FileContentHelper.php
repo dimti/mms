@@ -66,6 +66,14 @@ final class FileContentHelper
      */
     public static function replaceLine(string &$content, int $lineNumber, string $lineContentToReplace): void
     {
+        if (!trim($content)) {
+            throw new MmsFileContentException(sprintf(
+                'File content is empty for replacing line %d content to: %s)',
+                $lineNumber,
+                $lineContentToReplace
+            ));
+        }
+
         $startPosition = 0;
 
         if ($lineNumber > 1) {

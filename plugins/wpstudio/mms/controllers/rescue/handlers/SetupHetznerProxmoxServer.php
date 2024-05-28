@@ -162,7 +162,7 @@ class SetupHetznerProxmoxServer extends ExtensionBase
 
     private function getActualIsoPathForInstall(): string
     {
-        if ($this->hasIsoPath()) {
+        if ($this->isIsoPathMode()) {
             return $this->getIsoPath();
         } else {
             return sprintf(
@@ -179,9 +179,13 @@ class SetupHetznerProxmoxServer extends ExtensionBase
      */
     private function downloadIsoAndStartQemu(): void
     {
-        if ($this->hasIsoPath()) {
+        if ($this->isIsoPathMode()) {
             $this->cli->checkExistsFile($this->getIsoPath());
         } else {
+            $originalTimeout = $this->cli->sshConnection->getGateway()->getTimeout();
+
+            $this->cli->sshConnection->setTimeout(300);
+
             $this->cli->run([
                 sprintf(
                     'wget %s%s',
@@ -189,6 +193,8 @@ class SetupHetznerProxmoxServer extends ExtensionBase
                     $this->getProxmoxIsoFileName()
                 ),
             ]);
+
+            $this->cli->sshConnection->setTimeout($originalTimeout);
         }
 
         $this->cli->run([
@@ -199,7 +205,7 @@ class SetupHetznerProxmoxServer extends ExtensionBase
         ]);
     }
 
-    public function hasIsoPath(): bool
+    public function isIsoPathMode(): bool
     {
         return !is_null($this->isoPath) && $this->isoPath;
     }
