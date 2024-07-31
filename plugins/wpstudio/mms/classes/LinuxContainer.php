@@ -98,7 +98,7 @@ class LinuxContainer
             $vmId = $this->vmId->status()->current()->get();
 
             if (!$vmId) {
-                throw new Exceptions\MmsLxcException(sprintf(
+                throw new Exceptions\MmsLxcNotFoundException(sprintf(
                     'LXC container %d not existing on server node %s',
                     $this->container->code,
                     $this->proxmoxServer->server->code

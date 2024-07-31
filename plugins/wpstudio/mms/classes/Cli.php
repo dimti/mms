@@ -5,7 +5,6 @@ namespace Wpstudio\Mms\Classes;
 use Collective\Remote\Connection;
 use Wpstudio\Mms\Classes\Exceptions\MmsCliException;
 use Wpstudio\Mms\Classes\Exceptions\MmsCliFileNotFoundException;
-use Wpstudio\Mms\Classes\Helpers\SshHelper;
 
 class Cli
 {
@@ -18,6 +17,9 @@ class Cli
         $this->sshConnection = $sshConnection;
     }
 
+    /**
+     * @throws MmsCliException
+     */
     public function run(string|array $commands): string
     {
         if (!is_array($commands)) {
@@ -31,21 +33,16 @@ class Cli
                 $commandsOutput[] = trim($output);
             });
 
-            if ($this->getExistCode() != 0) {
+            if ($this->sshConnection->status() != 0) {
                 throw new MmsCliException(sprintf(
                     'Command execute fails with exit code %d: %s',
-                    $this->getExistCode(),
+                    $this->sshConnection->status(),
                     $command
                 ));
             }
         }
 
         return implode(PHP_EOL, $commandsOutput);
-    }
-
-    public function getExistCode(): int
-    {
-        return $this->sshConnection->getGateway()->getConnection()->getExitStatus();
     }
 
     /**

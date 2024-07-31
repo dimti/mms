@@ -20,3 +20,6 @@ _ide_helper_models.php
 
 # iseed ignore
 /database/seeders
+
+# phpunit
+/.phpunit.result.cache

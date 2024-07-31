@@ -23,9 +23,11 @@ class CheckNginxSiteCode extends ExtensionBase
 
         $this->nginxSite->nginxConfig->checkExistsConfigFile();
 
-        $this->nginxSite->sslCert->checkExistsLiveDir();
-        $this->nginxSite->sslCert->checkExistsArchiveDir();
-        $this->nginxSite->sslCert->checkExistsRenewalConfigFile();
+        if (!$this->nginxSite->nginxConfig->isTemporarySelfSignedLetsencryptSsl()) {
+            $this->nginxSite->sslCert->checkExistsLiveDir();
+            $this->nginxSite->sslCert->checkExistsArchiveDir();
+            $this->nginxSite->sslCert->checkExistsRenewalConfigFile();
+        }
 
         Session::flash('onCheckNginxSiteCodeMessage', 'Конфигурационный файл найден');
     }

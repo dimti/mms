@@ -61,7 +61,7 @@ class Cluster extends Model
 
     public function getAuthTypeAttribute(): string
     {
-        if ($this->attributes['auth_type'] == self::AUTH_TYPE_PVE) {
+        if (array_key_exists('auth_type', $this->attributes) && $this->attributes['auth_type'] == self::AUTH_TYPE_PVE) {
             return static::$authTypeLabels[self::AUTH_TYPE_PVE];
         }
 
@@ -70,12 +70,12 @@ class Cluster extends Model
 
     public function getUsernameAttribute(): string
     {
-        return $this->attributes['username'] ? : self::ATTRIBUTE_DEFAULT_USERNAME;
+        return $this->attributes['username'] ?? self::ATTRIBUTE_DEFAULT_USERNAME;
     }
 
     public function getPortAttribute(): string
     {
-        return $this->attributes['port'] ? : self::ATTRIBUTE_DEFAULT_PORT;
+        return $this->attributes['port'] ?? self::ATTRIBUTE_DEFAULT_PORT;
     }
 
     public $belongsToMany = [

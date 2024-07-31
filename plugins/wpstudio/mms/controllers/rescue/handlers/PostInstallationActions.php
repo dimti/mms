@@ -3,12 +3,13 @@
 use Collective\Remote\Connection;
 use Validator;
 use Winter\Storm\Exception\ValidationException;
+use Winter\Storm\Extension\ExtensionBase;
+use Wpstudio\Mms\Classes\Exceptions\MmsFileContentException;
 use Wpstudio\Mms\Classes\Helpers\FileContentHelper;
 use Wpstudio\Mms\Classes\Helpers\SshHelper;
-use Wpstudio\Mms\Classes\Exceptions\MmsException;
 use Wpstudio\Mms\Models;
 
-class PostInstallationActions extends \Winter\Storm\Extension\ExtensionBase
+class PostInstallationActions extends ExtensionBase
 {
     const ZFS_ROOT_DATASET = 'rpool/ROOT/pve-1';
     const ROOT_FS_MOUNTPOINT = '/rpool/ROOT/pve-1';
@@ -87,7 +88,7 @@ class PostInstallationActions extends \Winter\Storm\Extension\ExtensionBase
         $this->setHostname();
 
         $this->disableSshPasswordAuthentication();
-        $this->addingNeedfulSshKeys();
+        $this->addSSHKeys();
 
         $this->createClusterAndServerModels();
 
@@ -187,6 +188,9 @@ class PostInstallationActions extends \Winter\Storm\Extension\ExtensionBase
         }
     }
 
+    /**
+     * @throws MmsFileContentException
+     */
     private function mountPveRootFs(): void
     {
         $this->sshConnection->run([
@@ -197,6 +201,17 @@ class PostInstallationActions extends \Winter\Storm\Extension\ExtensionBase
                 self::ZFS_ROOT_DATASET,
             ),
         ]);
+
+        sleep(1);
+
+        $expectedDirectoryExistsWithZfsPool = '/rpool';
+
+        if (!FileContentHelper::hasExistsDir($this->sshConnection, $expectedDirectoryExistsWithZfsPool)) {
+            throw new MmsFileContentException(sprintf(
+                '%s directory not exists',
+                $expectedDirectoryExistsWithZfsPool
+            ));
+        }
     }
 
     private function unmountPveRootFs(): void
@@ -275,7 +290,7 @@ EOF
 
     /**
      * @return void
-     * @throws \Wpstudio\Mms\Classes\MmsException
+     * @throws MmsFileContentException
      */
     private function setHostname(): void
     {
@@ -364,7 +379,7 @@ EOF
         return self::ROOT_FS_MOUNTPOINT . self::SSH_DIR_PATH . '/' . self::SSH_AUTHORIZED_KEYS_FILE_NAME;
     }
 
-    private function addingNeedfulSshKeys(): void
+    private function addSSHKeys(): void
     {
         $mmsPublicKey = trim(SshHelper::getPublicKey());
 
