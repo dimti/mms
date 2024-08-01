@@ -14,6 +14,6 @@ class NetworkTypes extends Controller
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('Wpstudio.Mms', 'mms-dictionaries', 'mms-dictionaries-network-types');
+        BackendMenu::setContext('Wpstudio.Mms', 'wpstudio-mms-dictionaries', 'wpstudio-mms-dictionaries-network-types');
     }
 }

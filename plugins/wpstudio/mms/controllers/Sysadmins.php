@@ -20,6 +20,6 @@ class Sysadmins extends Controller
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('Wpstudio.Mms', 'mms-dictionaries', 'mms-dictionaries-sysadmins');
+        BackendMenu::setContext('Wpstudio.Mms', 'wpstudio-mms-dictionaries', 'wpstudio-mms-dictionaries-sysadmins');
     }
 }

@@ -14,6 +14,6 @@ class DestinationRoles extends Controller
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('Wpstudio.Mms', 'mms-dictionaries', 'mms-dictionaries-destination-roles');
+        BackendMenu::setContext('Wpstudio.Mms', 'wpstudio-mms-dictionaries', 'wpstudio-mms-dictionaries-destination-roles');
     }
 }

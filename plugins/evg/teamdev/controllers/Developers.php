@@ -5,7 +5,11 @@ use BackendMenu;
 
 class Developers extends Controller
 {
-    public $implement = [        'Backend\Behaviors\ListController',        'Backend\Behaviors\FormController',        'Backend\Behaviors\ReorderController'    ];
+    public $implement = [
+        'Backend\Behaviors\ListController',
+        'Backend\Behaviors\FormController',
+        'Backend\Behaviors\ReorderController',
+    ];
     
     public $listConfig = 'config_list.yaml';
     public $formConfig = 'config_form.yaml';
@@ -14,6 +18,6 @@ class Developers extends Controller
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('Evg.Teamdev', 'main-menu-item', 'side-menu-item');
+        BackendMenu::setContext('Evg.Teamdev', 'evg-teamdev', 'evg-teamdev-developers');
     }
 }

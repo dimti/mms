@@ -21,6 +21,6 @@ class Teams extends Controller
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('Evg.Teamdev', 'main-menu-item', 'side-menu-item2');
+        BackendMenu::setContext('Evg.Teamdev', 'evg-teamdev', 'evg-teamdev-teams');
     }
 }

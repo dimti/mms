@@ -5,16 +5,16 @@ plugin:
     icon: wn-icon-group
     replaces: {  }
 navigation:
-    main-menu-item:
+    evg-teamdev:
         label: 'Team dev'
         url: evg/teamdev/teams
         icon: icon-group
         sideMenu:
-            side-menu-item:
-                label: Team
+            evg-teamdev-teams:
+                label: Teams
                 url: evg/teamdev/teams
                 icon: icon-users
-            side-menu-item2:
-                label: Dev
+            evg-teamdev-developers:
+                label: Developers
                 url: evg/teamdev/developers
                 icon: icon-street-view

@@ -5,45 +5,45 @@ plugin:
     icon: wn-icon-server
     replaces: {  }
 navigation:
-    main-menu-item:
+    wpstudio-mms:
         label: 'wpstudio.mms::lang.plugin.name'
         url: wpstudio/mms/servers
         icon: icon-server
         sideMenu:
-            mms-clusters:
+            wpstudio-mms-clusters:
                 label: Кластеры
                 url: wpstudio/mms/clusters
                 icon: icon-th-list
-            mms-servers:
+            wpstudio-mms-servers:
                 label: Servers
                 url: wpstudio/mms/servers
                 icon: icon-server
-            mms-containers:
+            wpstudio-mms-containers:
                 label: Containers
                 url: wpstudio/mms/containers
                 icon: icon-linux
-            mms-rescue:
+            wpstudio-mms-rescue:
                 label: Rescue
                 url: wpstudio/mms/rescue
                 icon: icon-ioxhost
-    mms-dictionaries:
+    wpstudio-mms-dictionaries:
         label: Dictionaries
         url: wpstudio/mms/servertypes
         icon: icon-navicon
         sideMenu:
-            mms-dictionaries-server-types:
+            wpstudio-mms-dictionaries-server-types:
                 label: 'Server Types'
                 url: wpstudio/mms/servertypes
                 icon: icon-navicon
-            mms-dictionaries-destination-roles:
+            wpstudio-mms-dictionaries-destination-roles:
                 label: 'Destination Roles'
                 url: wpstudio/mms/destinationroles
                 icon: icon-navicon
-            mms-dictionaries-network-types:
+            wpstudio-mms-dictionaries-network-types:
                 label: 'Network Types'
                 url: wpstudio/mms/networktypes
                 icon: icon-navicon
-            mms-dictionaries-sysadmins:
+            wpstudio-mms-dictionaries-sysadmins:
                 label: 'Системные администраторы'
                 url: wpstudio/mms/sysadmins
                 icon: icon-users

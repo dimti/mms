@@ -14,6 +14,6 @@ class ServerTypes extends Controller
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('Wpstudio.Mms', 'mms-dictionaries', 'mms-dictionaries-server-types');
+        BackendMenu::setContext('Wpstudio.Mms', 'wpstudio-mms-dictionaries', 'wpstudio-mms-dictionaries-server-types');
     }
 }

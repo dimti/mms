@@ -25,6 +25,6 @@ class Clusters extends Controller
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('Wpstudio.Mms', 'main-menu-item', 'mms-clusters');
+        BackendMenu::setContext('Wpstudio.Mms', 'wpstudio-mms', 'wpstudio-mms-clusters');
     }
 }
