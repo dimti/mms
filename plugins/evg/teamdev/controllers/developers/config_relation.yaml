@@ -1,0 +1,14 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+teams:
+    label: Teams
+    view:
+        list: _relation_teams_view_list.yaml
+        showSearch: true
+        toolbarButtons: create|add|unlink
+    manage:
+        list: _relation_teams_manage_list.yaml
+        form: _relation_teams_manage_form.yaml
+        showSearch: true

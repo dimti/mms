@@ -1,0 +1,9 @@
+columns:
+  id:
+    label: id
+    type: number
+  title:
+    label: Название
+    type: text
+    searchable: true
+

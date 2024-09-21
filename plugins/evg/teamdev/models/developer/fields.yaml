@@ -3,3 +3,5 @@ fields:
         label: Name
         span: auto
         type: text
+    teams:
+        type: partial
